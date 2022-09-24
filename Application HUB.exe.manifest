@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="804920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="807992">
       <assemblyIdentity name="Application HUB" version="1.4.3.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZsBmyc6W7SciJJQy2q4CxBc4HgnTs5z3sWkZx0SjZak=</dsig:DigestValue>
+        <dsig:DigestValue>zhKdVXeaPgzIJ/BwsHWPgYbt/aDEx0u1V4nrYyyYAQg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -432,13 +432,13 @@
       <dsig:DigestValue>LWxfWpvfjdOAdv7Yzk3sPEnoKzfvpAU59WmZ96wS484=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Application HUB.exe.config" size="3308">
+  <file name="Application HUB.exe.config" size="3296">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vj2IsNGYfDFfXemldqmgoz/GWNUKxAOS4suqlbxx97s=</dsig:DigestValue>
+      <dsig:DigestValue>uLeY150qw4dTCYGUrynitB37VtHSzhlbEoCJjLH8Occ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database1.mdf" size="8388608" writeableType="applicationData">
