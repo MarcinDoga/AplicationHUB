@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="838712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="797240">
       <assemblyIdentity name="Application HUB" version="1.4.3.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UxQ9aMqFELV1mHZ/8GCgMMmIVUOHBpujBKKYXU8Vq4I=</dsig:DigestValue>
+        <dsig:DigestValue>TbfQy37wDa7PtUxCgu4oO24OfV9pBkGrGJ/92f5Eq40=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -489,13 +489,22 @@
       <dsig:DigestValue>Rsr9Vx3VPPw0H3qaU8t5yf5E0szGUujsiQPOM2saJCA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Properties\2022-08-27_18.01.301.png" size="159429">
+  <file name="Properties\2022-10-02_21.57.18 — kopia.png" size="164770">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gNyRZuB/70Usq/OU6eGX7yhPDON1GpHs0ZyutTW0QBs=</dsig:DigestValue>
+      <dsig:DigestValue>nv0SJEvgZFaF9l1szDdiyssx88KMuWZ7EEP7Payxsz4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Properties\Bez nazwy.png" size="436071">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AKq0Wwa72lPw6ADu9j/KdZNVoeOAz2V5QTRq2dc3afM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Properties\Discord.png" size="959">
