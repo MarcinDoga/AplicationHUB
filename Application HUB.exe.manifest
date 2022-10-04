@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="797240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Application HUB.exe" size="813624">
       <assemblyIdentity name="Application HUB" version="1.4.3.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TbfQy37wDa7PtUxCgu4oO24OfV9pBkGrGJ/92f5Eq40=</dsig:DigestValue>
+        <dsig:DigestValue>TwVFtuKSmeBzss9W5BrzZr3kDtjvhidIpdWpYkY6K7I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
