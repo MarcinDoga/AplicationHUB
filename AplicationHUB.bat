@@ -2334,7 +2334,7 @@ if %podmiento4%==2 goto niepodmienNOVIP
 if %podmiento4%==3 goto ustNOVIP
 
 :newapp3
-powershell -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/MarcinDoga/AplicationHUB/main/ApplicationHUB.exe -OutFile data\ApplicationHUB.exe
+powershell -Command Invoke-WebRequest -Uri https://codeload.github.com/MarcinDoga/AplicationHUB/zip/refs/heads/main -OutFile data\ApplicationHUB.zip
 cls
 echo Zainstalowano do folderu data, by uruchomic kliknij byle jaki przycisk
 pause >>nul
@@ -2342,7 +2342,7 @@ start data\ApplicationHUB.exe
 exit
 
 :podmienNOVIP
-powershell -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/MarcinDoga/AplicationHUB/main/ApplicationHUB.bat -OutFile ApplicationHUB.bat
+powershell -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/MarcinDoga/AplicationHUB/main/AplicationHUB.bat -OutFile ApplicationHUB.bat
 cls 
 echo Zaaktualizowano, potrzebny jest restart.
 echo by zaktualizowac musisz kliknac byle jaki przycisk
@@ -2354,7 +2354,7 @@ exit
 
 :niepodmienNOVIP
 mkdir "%cd%\data\"
-powershell -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/MarcinDoga/AplicationHUB/main/ApplicationHUB.bat -OutFile data\ApplicationHUB.bat
+powershell -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/MarcinDoga/AplicationHUB/main/AplicationHUB.bat -OutFile data\ApplicationHUB.bat
 cls 
 echo Zaaktualizowano, najnowsza wersja jest w folderze data.
 goto ustNOVIP
