@@ -1,2 +1,2 @@
-1.4.6 Application Update
-#C51162
+1.4.7 Compatibility Update
+#689F38
