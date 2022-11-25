@@ -1,2 +1,2 @@
-1.4.7 Compatibility Update
-#689F38
+1.4.8 Compatibility Update
+#874EC0
