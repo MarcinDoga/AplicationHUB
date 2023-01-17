@@ -1,2 +1,2 @@
-1.5.1_2 System Update
-#EE9300
+1.5.2 Git Update
+#593A8F
