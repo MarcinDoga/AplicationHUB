@@ -1,2 +1,2 @@
-1.5.3 Git Update
-#593A8F
+1.0.0 Design and Mechanic Update
+#3A8F3C
