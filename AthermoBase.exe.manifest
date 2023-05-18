@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="AthermoBase" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1070648">
-      <assemblyIdentity name="AthermoBase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1079352">
+      <assemblyIdentity name="AthermoBase" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wSucAwCcuaxJ6zD/JrJ5vReg0T5SrfgPTxr5Hh2iOn0=</dsig:DigestValue>
+        <dsig:DigestValue>z9JM+fuaQW6LH+NcFZZMw6XSo7uw88OjIzF1EMY7qlY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -418,69 +418,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>nv0SJEvgZFaF9l1szDdiyssx88KMuWZ7EEP7Payxsz4=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Bez nazwy.png" size="436071">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AKq0Wwa72lPw6ADu9j/KdZNVoeOAz2V5QTRq2dc3afM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Discord.png" size="959">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8fBZV8N7cdMMVgY8dH4kOSHbOm8QMiu+XmrKy4g6iWQ=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Instagram.png" size="4504">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7DrIdqTVRfRxCtO/myIBTydX0OFwTP4PpOBhZ60ccEY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Minecraft Logo 40x40.png" size="3806">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gqKxmxo9FHJkBtZAEZpN+lKbv2VU2nRuIf8uPT8aoIY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\miniaturka 14.png" size="35760">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Us38E8N5Glv8b0DzcCt2MqlWGm7yhuKUapkkEbBxENg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Quit button.png" size="19621">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Xn0iJt4kJQR0kTauPmWefcMDTXc31j7nHz51OqqpxuU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Properties\Quit button2.png" size="1191">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gnSBeLAFmGAhbeMkFNmJpGLReH/dXfGk7vuJNPkUDHw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Properties\Tło Całe.png" size="34493">
