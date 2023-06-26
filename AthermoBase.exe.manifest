@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1179192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1180216">
       <assemblyIdentity name="AthermoBase" version="1.0.53.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RQo1j+vgb8YQ61t4PHC8KaukXpNHbhx6im3VQk5us4U=</dsig:DigestValue>
+        <dsig:DigestValue>+3b1Fpqe2cjsTI9G/vufZDsiWst9bGdth5F944sarus=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
