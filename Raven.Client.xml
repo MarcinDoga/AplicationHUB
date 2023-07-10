@@ -329,6 +329,11 @@
             It allows RavenDB Server to issue performance hint notifications e.g. during robust topology update requests which could indicate Client API misuse impacting the overall performance
             </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.HttpClientType">
+            <summary>
+            Used by HttpClient cache, if you are overriding DocumentConventions.CreateHttpClient convention then it is advisable to return here the type of the HttpClient from that convention
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.SecondBroadcastAttemptTimeout">
              <summary>
              Set the timeout for the second broadcast attempt.
@@ -673,6 +678,26 @@
             without touching the server.
             </remarks>
         </member>
+        <member name="M:Raven.Client.Documents.DocumentStore.AggressivelyCacheForAsync(System.TimeSpan,System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+            <remarks>
+            Aggressive caching means that we will not check the server to see whether the response
+            we provide is current or not, but will serve the information directly from the local cache
+            without touching the server.
+            </remarks>
+        </member>
+        <member name="M:Raven.Client.Documents.DocumentStore.AggressivelyCacheForAsync(System.TimeSpan,Raven.Client.Http.AggressiveCacheMode,System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+            <remarks>
+            Aggressive caching means that we will not check the server to see whether the response
+            we provide is current or not, but will serve the information directly from the local cache
+            without touching the server.
+            </remarks>
+        </member>
         <member name="M:Raven.Client.Documents.DocumentStore.OpenAsyncSession(System.String)">
             <summary>
             Opens the async session.
@@ -750,9 +775,14 @@
             Setup the context for aggressive caching.
             </summary>
         </member>
+        <member name="M:Raven.Client.Documents.DocumentStoreBase.AggressivelyCacheAsync(System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+        </member>
         <member name="T:Raven.Client.Documents.Identity.AsyncHiLoIdGenerator">
             <summary>
-            Generate hilo numbers against a RavenDB document
+            Generate HiLo numbers against a RavenDB document
             </summary>
         </member>
         <member name="M:Raven.Client.Documents.Identity.AsyncHiLoIdGenerator.#ctor(System.String,Raven.Client.Documents.DocumentStore,System.String,System.Char)">
@@ -771,6 +801,13 @@
             <summary>
             Generate a hilo ID for each given type
             </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Identity.DefaultAsyncHiLoIdGenerator.GenerateDocumentIdAsync(System.Object)">
+            <summary>
+            Generates the document ID.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns></returns>
         </member>
         <member name="M:Raven.Client.Documents.Identity.GenerateEntityIdOnTheClient.TryGetIdFromInstance(System.Object,System.String@)">
             <summary>
@@ -843,7 +880,42 @@
             without touching the server.
             </remarks>
         </member>
+        <member name="M:Raven.Client.Documents.IDocumentStore.AggressivelyCacheForAsync(System.TimeSpan,System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+            <param name="cacheDuration">Specify the aggressive cache duration</param>
+            <param name="database">The database to cache, if not specified, the default database will be used</param>
+            <remarks>
+            Aggressive caching means that we will not check the server to see whether the response
+            we provide is current or not, but will serve the information directly from the local cache
+            without touching the server.
+            </remarks>
+        </member>
+        <member name="M:Raven.Client.Documents.IDocumentStore.AggressivelyCacheForAsync(System.TimeSpan,Raven.Client.Http.AggressiveCacheMode,System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+            <param name="cacheDuration">Specify the aggressive cache duration</param>
+            <param name="database">The database to cache, if not specified, the default database will be used</param>
+            <param name="mode">Aggressive caching mode, if not specified, TrackChanges mode will be used</param>
+            <remarks>
+            Aggressive caching means that we will not check the server to see whether the response
+            we provide is current or not, but will serve the information directly from the local cache
+            without touching the server.
+            </remarks>
+        </member>
         <member name="M:Raven.Client.Documents.IDocumentStore.AggressivelyCache(System.String)">
+            <summary>
+            Setup the context for aggressive caching.
+            </summary>
+            <remarks>
+            Aggressive caching means that we will not check the server to see whether the response
+            we provide is current or not, but will serve the information directly from the local cache
+            without touching the server.
+            </remarks>
+        </member>
+        <member name="M:Raven.Client.Documents.IDocumentStore.AggressivelyCacheAsync(System.String)">
             <summary>
             Setup the context for aggressive caching.
             </summary>
@@ -3651,6 +3723,11 @@
             Implementation of the Contains ALL operator
             </summary>
         </member>
+        <member name="M:Raven.Client.Documents.Linq.RavenQueryableExtensions.AsAsyncEnumerable``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Implementation of AsAsyncEnumerable
+            </summary>
+        </member>
         <member name="T:Raven.Client.Documents.Linq.RavenQueryInspector`1">
             <summary>
             Implements <see cref="T:Raven.Client.Documents.Linq.IRavenQueryable`1"/>
@@ -3697,7 +3774,7 @@
             An implementation of <see cref="T:Raven.Client.Documents.Linq.IRavenQueryProvider"/>
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Linq.RavenQueryProvider`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.String,System.String,System.Type,Raven.Client.Documents.Session.QueryStatistics,Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.Boolean,Raven.Client.Documents.Conventions.DocumentConventions)">
+        <member name="M:Raven.Client.Documents.Linq.RavenQueryProvider`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.String,System.String,System.Type,Raven.Client.Documents.Session.QueryStatistics,Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.Boolean,Raven.Client.Documents.Conventions.DocumentConventions,System.Collections.Generic.HashSet{Raven.Client.Documents.Linq.FieldToFetch})">
             <summary>
             Initializes a new instance of the <see cref="T:Raven.Client.Documents.Linq.RavenQueryProvider`1"/> class.
             </summary>
@@ -4096,6 +4173,11 @@
         <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.Is64Bit">
             <summary>
             Indicates if process is 64-bit
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.Pager">
+            <summary>
+            Storage engine component that handles the memory-mapped files
             </summary>
         </member>
         <member name="T:Raven.Client.Documents.Operations.DeterminateProgress">
@@ -6679,6 +6761,13 @@
             <typeparam name="T"></typeparam>
             <param name="entity">The entity.</param>
         </member>
+        <member name="M:Raven.Client.Documents.Session.DocumentSession.Refresh``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Refreshes the specified entities from Raven server.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entities">The entities.</param>
+        </member>
         <member name="M:Raven.Client.Documents.Session.DocumentSession.GenerateId(System.Object)">
             <summary>
             Generates the document ID.
@@ -7342,6 +7431,12 @@
             </summary>
             <param name="entity">Instance of an entity that will be refreshed</param>
         </member>
+        <member name="M:Raven.Client.Documents.Session.IAdvancedSessionOperations.Refresh``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+                Updates entities with latest changes from server
+            </summary>
+            <param name="entities">Collection of instances of an entity that will be refreshed</param>
+        </member>
         <member name="M:Raven.Client.Documents.Session.IAdvancedSessionOperations.RawQuery``1(System.String)">
             <summary>
             Query the specified index using provided raw query
@@ -7561,6 +7656,13 @@
                 Updates entity with latest changes from server
             </summary>
             <param name="entity">Instance of an entity that will be refreshed</param>
+            <param name="token">The cancellation token.</param>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IAsyncAdvancedSessionOperations.RefreshAsync``1(System.Collections.Generic.IEnumerable{``0},System.Threading.CancellationToken)">
+            <summary>
+                Updates entity with latest changes from server
+            </summary>
+            <param name="entities">Collection of instances of an entity that will be refreshed</param>
             <param name="token">The cancellation token.</param>
         </member>
         <member name="M:Raven.Client.Documents.Session.IAsyncAdvancedSessionOperations.AsyncRawQuery``1(System.String)">
@@ -11641,6 +11743,11 @@
             <param name="objectType">The type to get serializable members for.</param>
             <returns>The serializable members for the type.</returns>
         </member>
+        <member name="F:Raven.Client.Json.Serialization.NewtonsoftJson.DefaultRavenSerializationBinder.ForbiddenTypes">
+            <summary>
+            https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#known-net-rce-gadgets
+            </summary>
+        </member>
         <member name="T:Raven.Client.Json.Serialization.NewtonsoftJson.Internal.Converters.DateTools">
              <summary> Provides support for converting dates to strings and vice-versa.
              The strings are structured so that lexicographic sorting orders
@@ -11958,6 +12065,11 @@
             Are logs compressed
             </summary>
         </member>
+        <member name="P:Raven.Client.ServerWide.Operations.ModifyDatabaseTopologyResult.RaftCommandIndex">
+            <summary>
+            The Raft Command Index that was executed 
+            </summary>
+        </member>
         <member name="P:Raven.Client.ServerWide.Operations.ModifySolverResult.Key">
             <summary>
             Key of the database .
@@ -11966,6 +12078,51 @@
         <member name="P:Raven.Client.ServerWide.Operations.ModifySolverResult.RaftCommandIndex">
             <summary>
             long? of the database after PUT operation.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.TrafficWatchMode">
+            <summary>
+            Traffic Watch logging mode.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.Databases">
+            <summary>
+            Database names by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.StatusCodes">
+            <summary>
+            Response status codes by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.MinimumResponseSizeInBytes">
+            <summary>
+            Minimum response size by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.MinimumRequestSizeInBytes">
+            <summary>
+            Minimum request size by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.MinimumDurationInMs">
+            <summary>
+            Minimum duration by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.HttpMethods">
+            <summary>
+            Request HTTP methods by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.ChangeTypes">
+            <summary>
+            Traffic Watch change types by which the Traffic Watch logging entities will be filtered.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.ServerWide.Operations.TrafficWatch.PutTrafficWatchConfigurationOperation.Parameters.CertificateThumbprints">
+            <summary>
+            Traffic Watch certificate thumbprints by which the Traffic Watch logging entities will be filtered.
             </summary>
         </member>
         <member name="P:Raven.Client.ServerWide.Tcp.AsyncTcpNegotiateParameters.ReadResponseAndGetVersionCallbackAsync">

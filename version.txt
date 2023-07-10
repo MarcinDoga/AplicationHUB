@@ -1,2 +1,2 @@
-1.0.54 Functionality Update
-#AD7000
+1.1.0 Wallpapers Update
+#D81B60

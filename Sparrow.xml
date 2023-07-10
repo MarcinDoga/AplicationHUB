@@ -189,7 +189,7 @@
             </summary>
             <param name="propertyId">Position of the string in the property ids storage</param>
             <param name="comparer">Comparer of a specific string value</param>
-            <param name="ignoreCase">Indicates if the comparassion should be case insensitive</param>
+            <param name="ignoreCase">Indicates if the comparison should be case insensitive</param>
             <returns></returns>
         </member>
         <member name="T:Sparrow.Json.CachedProperties">
