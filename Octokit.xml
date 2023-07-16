@@ -633,17 +633,6 @@
             <param name="enterprise">The enterprise.</param>
             <param name="runnerId">The runner id.</param>
         </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.DeleteEnterpriseRunner(System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from an enterprise
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-an-enterprise
-            </remarks>
-            <param name="enterprise">The enterprise.</param>
-            <param name="runnerId">The runner id.</param>
-            <param name="options">Options for changing the API response</param>
-        </member>
         <member name="M:Octokit.ActionsSelfHostedRunnersClient.DeleteOrganizationRunner(System.String,System.Int64)">
             <summary>
             Delete a self-hosted runner from an organization
@@ -653,17 +642,6 @@
             </remarks>
             <param name="organization">The organization.</param>
             <param name="runnerId">The runner id.</param>
-        </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.DeleteOrganizationRunner(System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from an organization
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-an-organization
-            </remarks>
-            <param name="organization">The organization.</param>
-            <param name="runnerId">The runner id.</param>
-            <param name="options">Options for changing the API response</param>
         </member>
         <member name="M:Octokit.ActionsSelfHostedRunnersClient.DeleteRepositoryRunner(System.String,System.String,System.Int64)">
             <summary>
@@ -676,18 +654,6 @@
             <param name="repo">The repo.</param>
             <param name="runnerId">The runner id.</param>
         </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.DeleteRepositoryRunner(System.String,System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from a repository
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-a-repository
-            </remarks>
-            <param name="owner">The owner.</param>
-            <param name="repo">The repo.</param>
-            <param name="runnerId">The runner id.</param>
-            <param name="options">Options for changing the API response</param>
-        </member>
         <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String)">
             <summary>
             Create a self-hosted runner registration token for an enterprise
@@ -697,7 +663,7 @@
             </remarks>
             <param name="enterprise">The enterprise.</param>
         </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String,Octokit.ApiOptions)">
+        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String,System.Threading.CancellationToken)">
             <summary>
             Create a self-hosted runner registration token for an enterprise
             </summary>
@@ -705,7 +671,7 @@
             https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-self-hosted-runner-registration-token-for-an-enterprise
             </remarks>
             <param name="enterprise">The enterprise.</param>
-            <param name="options">Options for changing the API response</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
         <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String)">
             <summary>
@@ -716,7 +682,7 @@
             </remarks>
             <param name="organization">The organization.</param>
         </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String,Octokit.ApiOptions)">
+        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String,System.Threading.CancellationToken)">
             <summary>
             Create a self-hosted runner registration token for an organization
             </summary>
@@ -724,7 +690,7 @@
             https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-self-hosted-runner-registration-token-for-an-organization
             </remarks>
             <param name="organization">The organization.</param>
-            <param name="options">Options for changing the API response</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
         <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String)">
             <summary>
@@ -736,7 +702,7 @@
             <param name="owner">The owner.</param>
             <param name="repo">The repo.</param>
         </member>
-        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String,Octokit.ApiOptions)">
+        <member name="M:Octokit.ActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Create a self-hosted runner registration token for a repository
             </summary>
@@ -745,7 +711,7 @@
             </remarks>
             <param name="owner">The owner.</param>
             <param name="repo">The repo.</param>
-            <param name="options">Options for changing the API response</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
         <member name="T:Octokit.ActionsWorkflowJobsClient">
             <summary>
@@ -5420,17 +5386,6 @@
             <param name="enterprise">The enterprise.</param>
             <param name="runnerId">The runner ID.</param>
         </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.DeleteEnterpriseRunner(System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from an enterprise
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-an-enterprise
-            </remarks>
-            <param name="enterprise">The enterprise.</param>
-            <param name="runnerId">The runner ID.</param>
-            <param name="options">Options to change the API response.</param>
-        </member>
         <member name="M:Octokit.IActionsSelfHostedRunnersClient.DeleteOrganizationRunner(System.String,System.Int64)">
             <summary>
             Delete a self-hosted runner from an organization
@@ -5440,17 +5395,6 @@
             </remarks>
             <param name="organization">The organization.</param>
             <param name="runnerId">The runner ID.</param>
-        </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.DeleteOrganizationRunner(System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from an organization
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-an-organization
-            </remarks>
-            <param name="organization">The organization.</param>
-            <param name="runnerId">The runner ID.</param>
-            <param name="options">Options to change the API response.</param>
         </member>
         <member name="M:Octokit.IActionsSelfHostedRunnersClient.DeleteRepositoryRunner(System.String,System.String,System.Int64)">
             <summary>
@@ -5463,19 +5407,7 @@
             <param name="name">The name of the repository.</param>
             <param name="runnerId">The runner ID.</param>
         </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.DeleteRepositoryRunner(System.String,System.String,System.Int64,Octokit.ApiOptions)">
-            <summary>
-            Delete a self-hosted runner from a repository
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#delete-a-self-hosted-runner-from-a-repository
-            </remarks>
-            <param name="owner">The owner of the repository.</param>
-            <param name="name">The name of the repository.</param>
-            <param name="runnerId">The runner ID.</param>
-            <param name="options">Options to change the API response.</param>
-        </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String)">
+        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String,System.Threading.CancellationToken)">
             <summary>
             Create a registration token for an enterprise
             </summary>
@@ -5483,18 +5415,9 @@
             https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-registration-token-for-an-enterprise
             </remarks>
             <param name="enterprise">The enterprise.</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateEnterpriseRegistrationToken(System.String,Octokit.ApiOptions)">
-            <summary>
-            Create a registration token for an enterprise
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-registration-token-for-an-enterprise
-            </remarks>
-            <param name="enterprise">The enterprise.</param>
-            <param name="options">Options to change the API response.</param>
-        </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String)">
+        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String,System.Threading.CancellationToken)">
             <summary>
             Create a registration token for an organization
             </summary>
@@ -5502,18 +5425,9 @@
             https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-registration-token-for-an-organization
             </remarks>
             <param name="organization">The organization.</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateOrganizationRegistrationToken(System.String,Octokit.ApiOptions)">
-            <summary>
-            Create a registration token for an organization
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-registration-token-for-an-organization
-            </remarks>
-            <param name="organization">The organization.</param>
-            <param name="options">Options to change the API response.</param>
-        </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String)">
+        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Create a registration token for a repository
             </summary>
@@ -5522,17 +5436,7 @@
             </remarks>
             <param name="owner">The owner of the repository.</param>
             <param name="name">The name of the repository.</param>
-        </member>
-        <member name="M:Octokit.IActionsSelfHostedRunnersClient.CreateRepositoryRegistrationToken(System.String,System.String,Octokit.ApiOptions)">
-            <summary>
-            Create a registration token for a repository
-            </summary>
-            <remarks>
-            https://docs.github.com/en/enterprise-cloud@latest/rest/actions/self-hosted-runners?apiVersion=2022-11-28#create-a-registration-token-for-a-repository
-            </remarks>
-            <param name="owner">The owner of the repository.</param>
-            <param name="name">The name of the repository.</param>
-            <param name="options">Options to change the API response.</param>
+            <param name="cancellationToken">A token used to cancel this potentially long running request</param>
         </member>
         <member name="T:Octokit.IActionsWorkflowJobsClient">
             <summary>
