@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.1.1.0" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="AthermoBase" version="1.1.2.0" language="neutral" processorArchitecture="amd64" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1222200">
-      <assemblyIdentity name="AthermoBase" version="1.1.1.0" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1231416">
+      <assemblyIdentity name="AthermoBase" version="1.1.2.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v1QeO8Uc2EvSEm+dBNCvGADPH/hLslMjEEHSbh4CMO4=</dsig:DigestValue>
+        <dsig:DigestValue>xmy8c+UBUzdbEhxmhoVZrHv+chD6lwazcm3rPsCFfHs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Memory.dll" size="47616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Memory.dll" size="47104">
       <assemblyIdentity name="Memory" version="1.2.24.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jb5F1p+QZbEjbwItmgUED2P5OaGrcw7XmevzyGRiaJM=</dsig:DigestValue>
+        <dsig:DigestValue>cRedTABnhC27ysszRDY9LywuQjwbwl+0ihrXe9YJl4U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
