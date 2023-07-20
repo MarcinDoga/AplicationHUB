@@ -1,2 +1,2 @@
-1.1.3 Wallpapers Update
-#D81B60
+1.1.3 Language and Stability Update
+#DC9C35
