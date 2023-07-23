@@ -1,2 +1,2 @@
-1.1.3 Language and Stability Update
-#DC9C35
+1.2.0 Achievements Update
+#26A69A
