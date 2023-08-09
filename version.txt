@@ -1,2 +1,2 @@
-1.2.0 Achievements Update
+1.2.1 Achievements Hotfix Update
 #26A69A

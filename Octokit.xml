@@ -10036,6 +10036,13 @@
             <param name="deviceFlowResponse">The response you received from <see cref="M:Octokit.IOauthClient.InitiateDeviceFlow(Octokit.OauthDeviceFlowRequest)"/></param>
             <returns></returns>
         </member>
+        <member name="M:Octokit.IOauthClient.CreateAccessTokenFromRenewalToken(Octokit.OauthTokenRenewalRequest)">
+            <summary>
+            Makes a request to get an access token using the refresh token returned in <see cref="M:Octokit.IOauthClient.CreateAccessToken(Octokit.OauthTokenRequest)"/>.
+            </summary>
+            <param name="request">Token renewal request.</param>
+            <returns><see cref="T:Octokit.OauthToken"/> with the new token set.</returns>
+        </member>
         <member name="T:Octokit.IOrganizationActionsClient">
             <summary>
             A client for GitHub's Org Actions API.
@@ -19293,6 +19300,7 @@
             <summary>
             Provides methods used in the OAuth web flow.
             </summary>
+            <inheritdoc />
         </member>
         <member name="M:Octokit.OauthClient.#ctor(Octokit.IConnection)">
             <summary>
@@ -19305,42 +19313,6 @@
             Gets the URL used in the first step of the web flow. The Web application should redirect to this URL.
             </summary>
             <param name="request">Parameters to the Oauth web flow login url</param>
-            <returns></returns>
-        </member>
-        <member name="M:Octokit.OauthClient.CreateAccessToken(Octokit.OauthTokenRequest)">
-            <summary>
-            Makes a request to get an access token using the code returned when GitHub.com redirects back from the URL
-            <see cref="M:Octokit.OauthClient.GetGitHubLoginUrl(Octokit.OauthLoginRequest)">GitHub login url</see> to the application.
-            </summary>
-            <remarks>
-            If the user accepts your request, GitHub redirects back to your site with a temporary code in a code
-            parameter as well as the state you provided in the previous step in a state parameter. If the states don’t
-            match, the request has been created by a third party and the process should be aborted. Exchange this for
-            an access token using this method.
-            </remarks>
-            <param name="request"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Octokit.OauthClient.InitiateDeviceFlow(Octokit.OauthDeviceFlowRequest)">
-            <summary>
-            Makes a request to initiate the device flow authentication.
-            </summary>
-            <remarks>
-            Returns a user verification code and verification URL that the you will use to prompt the user to authenticate.
-            This request also returns a device verification code that you must use to receive an access token to check the status of user authentication.
-            </remarks>
-            <param name="request"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Octokit.OauthClient.CreateAccessTokenForDeviceFlow(System.String,Octokit.OauthDeviceFlowResponse)">
-            <summary>
-            Makes a request to get an access token using the response from <see cref="M:Octokit.OauthClient.InitiateDeviceFlow(Octokit.OauthDeviceFlowRequest)"/>.
-            </summary>
-            <remarks>
-            Will poll the access token endpoint, until the device and user codes expire or the user has successfully authorized the app with a valid user code.
-            </remarks>
-            <param name="clientId">The client Id you received from GitHub when you registered the application.</param>
-            <param name="deviceFlowResponse">The response you received from <see cref="M:Octokit.OauthClient.InitiateDeviceFlow(Octokit.OauthDeviceFlowRequest)"/></param>
             <returns></returns>
         </member>
         <member name="T:Octokit.OrganizationActionsClient">
@@ -37677,6 +37649,40 @@
             The default is <c>true</c>. Use <c>false</c> in the case that a policy prohibits signups.
             </summary>
         </member>
+        <member name="T:Octokit.OauthTokenRenewalRequest">
+            <summary>
+            Used to create an Oauth login request.
+            </summary>
+        </member>
+        <member name="M:Octokit.OauthTokenRenewalRequest.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates an instance of the OAuth token refresh request.
+            </summary>
+            <param name="clientId">The client Id you received from GitHub when you registered the application.</param>
+            <param name="clientSecret">The client secret you received from GitHub when you registered.</param>
+            <param name="refreshToken">The refresh token you received when making the original oauth token request.</param>
+        </member>
+        <member name="P:Octokit.OauthTokenRenewalRequest.ClientId">
+            <summary>
+            The client Id you received from GitHub when you registered the application.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthTokenRenewalRequest.ClientSecret">
+            <summary>
+            The client secret you received from GitHub when you registered.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthTokenRenewalRequest.GrantType">
+            <summary>
+            The type of grant. Should be ommited, unless renewing an access token.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthTokenRenewalRequest.RefreshToken">
+            <summary>
+            The refresh token you received as a response to making the <see cref="M:Octokit.IOauthClient.CreateAccessToken(Octokit.OauthTokenRequest)">OAuth login
+            request</see>.
+            </summary>
+        </member>
         <member name="T:Octokit.OauthTokenRequest">
             <summary>
             Used to create an Oauth login request.
@@ -43516,6 +43522,33 @@
             and receive a slow_down error.
             </summary>
         </member>
+        <member name="M:Octokit.OauthToken.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octokit.OauthToken"/> class.
+            Use this constructor when you don't have a refreshToken.
+            </summary>
+            <param name="tokenType">The type of token returned by GitHub.</param>
+            <param name="accessToken">The access token returned by GitHub.</param>
+            <param name="scope">The auhtorization scope of the returned token.</param>
+            <param name="error">The error code returned by the GitHub API.</param>
+            <param name="errorDescription">The error message, if any, returned by the GitHub API.</param>
+            <param name="errorUri">The GitHub documentation link, detailing the error message.</param>
+        </member>
+        <member name="M:Octokit.OauthToken.#ctor(System.String,System.String,System.Int32,System.String,System.Int32,System.Collections.Generic.IReadOnlyList{System.String},System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octokit.OauthToken"/> class.
+            Use this constructor by default.
+            </summary>
+            <param name="tokenType">The type of token returned by GitHub.</param>
+            <param name="accessToken">The access token returned by GitHub.</param>
+            <param name="expiresIn">The amount of seconds, before the access token expires.</param>
+            <param name="refreshToken">The refresh token returned by GitHub. Use this, to get a new access token if it expires.</param>
+            <param name="refreshTokenExpiresIn">The amount of seconds, before the refresh token expires.</param>
+            <param name="scope">The auhtorization scope of the returned token.</param>
+            <param name="error">The error code returned by the GitHub API.</param>
+            <param name="errorDescription">The error message, if any, returned by the GitHub API.</param>
+            <param name="errorUri">The GitHub documentation link, detailing the error message.</param>
+        </member>
         <member name="P:Octokit.OauthToken.TokenType">
             <summary>
             The type of OAuth token
@@ -43524,6 +43557,22 @@
         <member name="P:Octokit.OauthToken.AccessToken">
             <summary>
             The secret OAuth access token. Use this to authenticate Octokit.net's client.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthToken.ExpiresIn">
+            <summary>
+            The amount of seconds, until the acces token expires.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthToken.RefreshToken">
+            <summary>
+            The secret refresh token.
+            Use this to get a new access token, without going through the OAuth flow again.
+            </summary>
+        </member>
+        <member name="P:Octokit.OauthToken.RefreshTokenExpiresIn">
+            <summary>
+            The amount of seconds, until the refresh token expires.
             </summary>
         </member>
         <member name="P:Octokit.OauthToken.Scope">

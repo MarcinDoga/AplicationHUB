@@ -4945,17 +4945,19 @@
         </member>
         <member name="T:Raven.Client.Documents.Queries.SearchOperator">
             <summary>
-            Search operator between terms in a search caluse
+            Search operator between terms in a search clause
             </summary>
         </member>
         <member name="F:Raven.Client.Documents.Queries.SearchOperator.Or">
             <summary>
-            Or operator will be used between all terms for a search clause, meaning a field value that matches any of the terms will be considered a match
+            Or operator will be used between all terms of a search clause.
+            A field value that matches any of the terms will be considered a match.
             </summary>
         </member>
         <member name="F:Raven.Client.Documents.Queries.SearchOperator.And">
             <summary>
-            And operator will be used between all terms for a search clause, meaning a field value matching all of the terms will be considered a match
+            And operator will be used between all terms of a search clause.
+            A field value matching all of the terms will be considered a match.
             </summary>
         </member>
         <member name="T:Raven.Client.Documents.Queries.Spatial.WktSanitizer">
@@ -5051,23 +5053,25 @@
         </member>
         <member name="F:Raven.Client.Documents.SearchOptions.Or">
             <summary>
-            Logical Or operator will be used in relation to previous statement
+            Logical Or operator will be used in relation to the previous search statement.
             </summary>
         </member>
         <member name="F:Raven.Client.Documents.SearchOptions.And">
             <summary>
-            Logical And operator will be used in relation to previous statement
+            Logical And operator will be used in relation to the previous search statement.
             </summary>
         </member>
         <member name="F:Raven.Client.Documents.SearchOptions.Not">
             <summary>
-            Current statement will be negated, can be used in combination with the Or, And and Guess Flags
+            The current search statement will be negated.
+            Can be used in combination with the Or, And, and Guess Flags.
             </summary>
         </member>
         <member name="F:Raven.Client.Documents.SearchOptions.Guess">
             <summary>
-            RavenDB will attemt to matchup semantics between terms in the next manner: 
-            If there are consecutive searches, they will be OR together, otherwise the AND semantic will be used
+            RavenDB will attempt to match up semantics between search statements in the following manner: 
+            An AND operator will be used between a non-search statement and the immediate search statement that follows.
+            An OR operator will be used between consecutive searches.
             </summary>
         </member>
         <member name="T:Raven.Client.Documents.Session.AbstractDocumentQuery`2">
@@ -5343,7 +5347,7 @@
         </member>
         <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.Boost(System.Decimal)">
             <summary>
-              Specifies a boost weight to the last where clause.
+              Specifies a boost weight to the previous where clause.
               The higher the boost factor, the more relevant the term will be.
             </summary>
             <param name = "boost">boosting factor where 1.0 is default, less than 1.0 is lower weight, greater than 1.0 is higher weight</param>
@@ -7141,7 +7145,7 @@
         </member>
         <member name="M:Raven.Client.Documents.Session.IAbstractDocumentQuery`1.Boost(System.Decimal)">
             <summary>
-              Specifies a boost weight to the last where clause.
+              Specifies a boost weight to the previous where clause.
               The higher the boost factor, the more relevant the term will be.
             </summary>
             <param name = "boost">boosting factor where 1.0 is default, less than 1.0 is lower weight, greater than 1.0 is higher weight</param>
@@ -8949,7 +8953,7 @@
         </member>
         <member name="M:Raven.Client.Documents.Session.IDocumentQueryBase`2.Boost(System.Decimal)">
             <summary>
-                Specifies a boost weight to the last where clause.
+                Specifies a boost weight to the previous where clause.
                 The higher the boost factor, the more relevant the term will be.
             </summary>
             <param name="boost">
@@ -10839,7 +10843,8 @@
         </member>
         <member name="P:Raven.Client.Documents.Session.QueryStatistics.SkippedResults">
             <summary>
-            Gets or sets the skipped results
+            The number of results skipped by the server.
+            When > 0 then value of TotalResults is invalidated.
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Session.QueryStatistics.ScannedResults">

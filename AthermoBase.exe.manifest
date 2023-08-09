@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.2.0.0" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="AthermoBase" version="1.2.1.0" language="neutral" processorArchitecture="amd64" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1241656">
-      <assemblyIdentity name="AthermoBase" version="1.2.0.0" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1249848">
+      <assemblyIdentity name="AthermoBase" version="1.2.1.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3h5QeBnJjb4RfWWrXgAQWL8YEnalEoJI5lbKaIbR+6A=</dsig:DigestValue>
+        <dsig:DigestValue>eG5CogOHvUJv5LesWwBygUiDF+j2PxOLViRHC4pRAuA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.AspNetCore.JsonPatch.dll" size="56480">
-      <assemblyIdentity name="Microsoft.AspNetCore.JsonPatch" version="7.0.9.0" publicKeyToken="ADB9793829DDAE60" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.AspNetCore.JsonPatch.dll" size="56440">
+      <assemblyIdentity name="Microsoft.AspNetCore.JsonPatch" version="7.0.10.0" publicKeyToken="ADB9793829DDAE60" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1frIYzEQjDggOvyK5W1TAChU2ck0U9loPzzj8TgSIyI=</dsig:DigestValue>
+        <dsig:DigestValue>IMopIxSOMra+daDKLPRj8dV85r5TgNkvK50XjmR4mjQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -187,26 +187,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Identity.Client.dll" size="1644504">
-      <assemblyIdentity name="Microsoft.Identity.Client" version="4.54.1.0" publicKeyToken="0A613F4DD989E8AE" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Identity.Client.dll" size="1645000">
+      <assemblyIdentity name="Microsoft.Identity.Client" version="4.55.0.0" publicKeyToken="0A613F4DD989E8AE" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DmbIwSnoTkU24t0qDWUWwKM/zy9luiAdM54j7517nMg=</dsig:DigestValue>
+        <dsig:DigestValue>dd2rJfY6T9piWqmZfZmemQXJi593J0S0ZZ7L97mto6E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.IdentityModel.Abstractions.dll" size="18848">
-      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" version="6.31.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.IdentityModel.Abstractions.dll" size="18808">
+      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" version="6.32.1.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i7iw+a90EGbnXvPD/B1+6W2XDaGcLOawb2p8N9uXVX0=</dsig:DigestValue>
+        <dsig:DigestValue>czL/+e59AoB9iQ/+f+83fz9cUhnHCbfgU7Y8BeipLvc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -331,14 +331,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Octokit.dll" size="1289216">
-      <assemblyIdentity name="Octokit" version="7.0.1.0" publicKeyToken="0BE8860AEE462442" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Octokit.dll" size="1292288">
+      <assemblyIdentity name="Octokit" version="7.1.0.0" publicKeyToken="0BE8860AEE462442" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MwzahsV6KnneC/H2BV9SFA93CGtx1+x0y/VYWnIJTaw=</dsig:DigestValue>
+        <dsig:DigestValue>6ZfqpXiCr5XT9AOxcM4780XUtIrznIvOOjPTGYbY9fw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -367,26 +367,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Raven.Client.dll" size="2370048">
-      <assemblyIdentity name="Raven.Client" version="5.4.107.0" publicKeyToken="37F41C7F99471593" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Raven.Client.dll" size="2376192">
+      <assemblyIdentity name="Raven.Client" version="5.4.109.0" publicKeyToken="37F41C7F99471593" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gWQDcD35gP9YtwbBnKH6InNJqNJLDZy4qYQMAc7MtKU=</dsig:DigestValue>
+        <dsig:DigestValue>k58cZZRl/TdQLizCVzSySw37TXS2U8dtgdfatFIjjSU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sparrow.dll" size="431104">
-      <assemblyIdentity name="Sparrow" version="5.4.107.0" publicKeyToken="37F41C7F99471593" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sparrow.dll" size="432128">
+      <assemblyIdentity name="Sparrow" version="5.4.109.0" publicKeyToken="37F41C7F99471593" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dyRA7yae94mTkWkBcE1ZNYLVifo79MEzjvm41UK4dN0=</dsig:DigestValue>
+        <dsig:DigestValue>CVwFwW8YLI0zE4pNlPy8rds06ON0yu8+Rmnx5Dgsb+M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -498,13 +498,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AthermoBase.exe.config" size="5313">
+  <file name="AthermoBase.exe.config" size="5315">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>guRtiU0xUnhCmIogr1HpauLjrxuO9mfYxJM3Kl4X0cM=</dsig:DigestValue>
+      <dsig:DigestValue>PBQT9lq8psgzP0ajD24xbOkaoXvPbQ85t3IQCHeer3E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Properties\2022-10-02_21.57.18 — kopia.png" size="164770">

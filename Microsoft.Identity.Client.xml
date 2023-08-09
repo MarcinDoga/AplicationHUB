@@ -1005,8 +1005,8 @@
         <member name="P:Microsoft.Identity.Client.BrokerOptions.MsaPassthrough">
             <summary>
             A legacy option available only to Microsoft First-Party applications. Should be avoided where possible.
-            Support is experimental.
             </summary>
+            <remarks>This is a convenience API, the same can be achieved by using WithExtraQueryParameters and passing the extra query parameter "msal_request_type": "consumer_passthrough"</remarks>
         </member>
         <member name="P:Microsoft.Identity.Client.BrokerOptions.ListOperatingSystemAccounts">
             <summary>
@@ -1533,7 +1533,7 @@
             <summary>
             Adds a known authority to the application from its Uri. See https://aka.ms/msal-net-application-configuration.
             This constructor is mainly used for scenarios where the authority is not a standard Azure AD authority,
-            nor an ADFS authority, nor an Azure AD B2C authority. For Azure AD, even in national and sovereign clouds, prefer
+            nor an ADFS authority, nor an Azure AD B2C authority. For Azure AD, even in sovereign clouds, prefer
             using other overrides such as <see cref="M:Microsoft.Identity.Client.AbstractApplicationBuilder`1.WithAuthority(Microsoft.Identity.Client.AzureCloudInstance,Microsoft.Identity.Client.AadAuthorityAudience,System.Boolean)"/>
             </summary>
             <param name="authorityUri">Uri of the authority</param>
@@ -1823,6 +1823,18 @@
             This class must be kept immutable
             </remarks>
         </member>
+        <member name="P:Microsoft.Identity.Client.AuthorityInfo.IsUserAssertionSupported">
+            <summary>
+            For IWA
+            </summary>
+        </member>
+        <member name="P:Microsoft.Identity.Client.AuthorityInfo.CanBeTenanted">
+            <summary>
+            Authority support multi-tenantcy. ADFS and Generic authorities are not tenanted.
+            B2C doesn't allow multi-tenancy scenarios, but the authority itself is tenanted. 
+            For CIAM, we allow multi-tenancy scenarios, and expect the STS to fail.
+            </summary>
+        </member>
         <member name="T:Microsoft.Identity.Client.AuthorityInfo.AuthorityInfoHelper">
             <summary>
             This is extension for AuthorityInfo
@@ -1871,12 +1883,12 @@
         </member>
         <member name="F:Microsoft.Identity.Client.AzureCloudInstance.AzureChina">
             <summary>
-            Microsoft Chinese national cloud. Maps to https://login.chinacloudapi.cn
+            Microsoft Azure China cloud. Maps to https://login.chinacloudapi.cn
             </summary>
         </member>
         <member name="F:Microsoft.Identity.Client.AzureCloudInstance.AzureGermany">
             <summary>
-            Microsoft German national cloud ("Black Forest"). Maps to https://login.microsoftonline.de
+            Microsoft Azure German cloud ("Black Forest"). Maps to https://login.microsoftonline.de
             </summary>
         </member>
         <member name="F:Microsoft.Identity.Client.AzureCloudInstance.AzureUsGovernment">
@@ -2188,19 +2200,20 @@
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.WithAzureRegion(System.String)">
             <summary>
-            Instructs MSAL.NET to use an Azure regional token service. This feature is currently available to 
-            first party applications only. 
+            Instructs MSAL to use an Azure regional token service. This feature is currently available to 
+            first-party applications only. 
             </summary>
             <param name="azureRegion">Either the string with the region (preferred) or        
-            use <see cref="F:Microsoft.Identity.Client.ConfidentialClientApplication.AttemptRegionDiscovery"/> and MSAL.NET will attempt to auto-detect the region.                
+            use <see cref="F:Microsoft.Identity.Client.ConfidentialClientApplication.AttemptRegionDiscovery"/> and MSAL will attempt to auto-detect the region.                
             </param>
             <remarks>
-            The region value should be short region name for the region where the service is deployed. 
-            For example "centralus" is short name for region Central US.
-            Service To Service (client credential flow) tokens can be obtained from the regional service.
+            The region value should be a short region name for the region where the service is deployed. 
+            For example, "centralus" is short name for region Central US.
+            Currently only tokens for the client credential flow can be obtained from the regional service.
             Requires configuration at the tenant level.
             Auto-detection works on a limited number of Azure artifacts (VMs, Azure functions). 
             If auto-detection fails, the non-regional endpoint will be used.
+            If a specific region was provided and the token web request failed, verify that the region name is valid.
             See https://aka.ms/msal-net-region-discovery for more details.        
             </remarks>
             <returns>The builder to chain the .With methods</returns>
@@ -2407,12 +2420,13 @@
         </member>
         <member name="T:Microsoft.Identity.Client.IMsalHttpClientFactory">
             <summary>
-            Factory responsible for creating HttpClient
-            .Net recommends to use a single instance of HttpClient.
+            Factory responsible for creating HttpClient. 
+            See https://learn.microsoft.com/dotnet/api/system.net.http.httpclient?view=net-7.0#instancing for more details.
             </summary>
             <remarks>
-            Implementations must be thread safe. Consider creating and configuring an HttpClient in the constructor
-            of the factory, and returning the same object in <see cref="M:Microsoft.Identity.Client.IMsalHttpClientFactory.GetHttpClient"/>
+            Implementations must be thread safe. 
+            Do not create a new HttpClient for each call to <see cref="M:Microsoft.Identity.Client.IMsalHttpClientFactory.GetHttpClient"/> - this leads to socket exhaustion.
+            If your app uses Integrated Windows Authentication, ensure <see cref="P:System.Net.Http.HttpClientHandler.UseDefaultCredentials"/> is set to true.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IMsalHttpClientFactory.GetHttpClient">
@@ -2518,9 +2532,11 @@
         </member>
         <member name="M:Microsoft.Identity.Client.ManagedIdentityApplicationBuilder.Create(Microsoft.Identity.Client.AppConfig.ManagedIdentityId)">
             <summary>
-            Creates a ManagedIdentityApplicationBuilder from a user assigned managed identity clientID / resourceId.
+            Creates a ManagedIdentityApplicationBuilder from a user assigned managed identity clientID / resourceId / objectId.
             For example, for a system assigned managed identity use ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.SystemAssigned)
-            and for a user assigned managed identity use ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.WithUserAssignedClientId(clientId)).
+            and for a user assigned managed identity use ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.WithUserAssignedClientId(clientId)) or
+            ManagedIdentityId.WithUserAssignedResourceId("resourceId") or 
+            ManagedIdentityId.WithUserAssignedObjectId("objectid").
             For more details see https://aka.ms/msal-net-managed-identity
             </summary>
             <param name="managedIdentityId">Configuration of the Managed Identity assigned to the resource.</param>
@@ -2551,7 +2567,8 @@
             Class to store configuration for a managed identity enabled on a resource.
             For a system assigned managed identity use ManagedIdentityId.SystemAssigned.
             For user assigned managed identity use ManagedIdentityId.WithUserAssignedClientId("clientId") or 
-            ManagedIdentityId.WithUserAssignedResourceId("resourceId").
+            ManagedIdentityId.WithUserAssignedResourceId("resourceId") or 
+            ManagedIdentityId.WithUserAssignedObjectId("objectid").
             For more details see https://aka.ms/msal-net-managed-identity
             </summary>
         </member>
@@ -2564,7 +2581,7 @@
             <summary>
             Create an instance of ManagedIdentityId for a user assigned managed identity from a client id.
             </summary>
-            <param name="clientId">Client id of the user assigned managed identity assigned to azure resource.</param>
+            <param name="clientId">Client id of the user assigned managed identity assigned to the azure resource.</param>
             <returns>Instance of ManagedIdentityId.</returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
@@ -2572,7 +2589,15 @@
             <summary>
             Create an instance of ManagedIdentityId for a user assigned managed identity from a resource id.
             </summary>
-            <param name="resourceId">Resource id of the user assigned managed identity assigned to azure resource.</param>
+            <param name="resourceId">Resource id of the user assigned managed identity assigned to the azure resource.</param>
+            <returns>Instance of ManagedIdentityId.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Microsoft.Identity.Client.AppConfig.ManagedIdentityId.WithUserAssignedObjectId(System.String)">
+            <summary>
+            Create an instance of ManagedIdentityId for a user assigned managed identity from an object id.
+            </summary>
+            <param name="objectId">Object id of the user assigned managed identity assigned to the azure resource.</param>
             <returns>Instance of ManagedIdentityId.</returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
@@ -2714,7 +2739,7 @@
         <member name="M:Microsoft.Identity.Client.PublicClientApplicationBuilder.WithMultiCloudSupport(System.Boolean)">
             <summary>
             Enables multi cloud support for this instance of public client application.
-            It enables applications to use in a global public cloud authority to the library and can still get tokens for resources from national clouds.
+            It enables applications to use in a global public cloud authority to the library and can still get tokens for resources from sovereign clouds.
             </summary>
             <param name="enableMultiCloudSupport">Enable or disable multi cloud support.</param>
             <returns>A <see cref="T:Microsoft.Identity.Client.PublicClientApplicationBuilder"/> from which to set more
@@ -3628,7 +3653,11 @@
             Specifies if the L1 cache is used.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Microsoft.Identity.Client.Cache.CacheLevel.L2Cache" -->
+        <member name="F:Microsoft.Identity.Client.Cache.CacheLevel.L2Cache">
+            <summary>
+            Specifies if the L2 cache is used.
+            </summary>
+        </member>
         <member name="T:Microsoft.Identity.Client.Cache.CacheSessionManager">
             <summary>
             MSAL should only interact with the cache though this object. It is responsible for firing cache notifications.
@@ -5333,9 +5362,10 @@
         </member>
         <member name="M:Microsoft.Identity.Client.Instance.Authority.GetTenantedAuthority(System.String,System.Boolean)">
             <summary>
-            Gets a tenanted authority if the current authority is tenant-less.
-            Returns the original authority on B2C and ADFS
+            Changes the tenant id of the authority, if the authority supports tenants. If not, throws exception,.
             </summary>
+            <param name="tenantId">The new tenant id</param>
+            <param name="forceSpecifiedTenant">Forces the change, even if the current tenant is not "common" or "organizations" or "consumers"</param>
         </member>
         <member name="T:Microsoft.Identity.Client.Instance.AuthorityManager">
             <summary>
@@ -5736,10 +5766,18 @@
         </member>
         <member name="T:Microsoft.Identity.Client.IPublicClientApplication">
             <summary>
-            Interface to be used with desktop or mobile applications (Desktop / UWP / Xamarin.iOS / Xamarin.Android).
-            public client applications are not trusted to safely keep application secrets, and therefore they only access web APIs in the name of the user only.
-            For details see https://aka.ms/msal-net-client-applications.
+            Class used to acquire tokens in desktop and mobile applications. Public client applications are not trusted to safely keep application secrets and therefore they can only access web APIs in the name of the authenticating user.
+            For more details on differences between public and confidential clients, refer to <see href="https://aka.ms/msal-net-client-applications">our documentation</see>.
             </summary>
+            <remarks>
+            <para>
+            Unlike <see cref="T:Microsoft.Identity.Client.IConfidentialClientApplication"/>, public clients are unable to securely store secrets on a client device and as a result do not require the use of a client secret.
+            </para>
+            <para>
+            The redirect URI needed for interactive authentication is automatically determined by the library. It does not need to be passed explicitly in the constructor. Depending
+            on the authentication strategy (e.g., through the <see href="https://learn.microsoft.com/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam?view=msal-dotnet-latest">Web Account Manager</see>, the Authenticator app, web browser, etc.), different redirect URIs will be used by MSAL. Redirect URIs must always be configured for the application in the Azure Portal.
+            </para>
+            </remarks>
             <summary>
             Interface defining common API methods and properties.
             For details see https://aka.ms/msal-net-client-applications
@@ -5747,133 +5785,114 @@
         </member>
         <member name="P:Microsoft.Identity.Client.IPublicClientApplication.IsSystemWebViewAvailable">
             <summary>
-            Tells if the application can use the system web browser, therefore getting single-sign-on with web applications.
+            Tells if the application can use the system web browser, therefore enabling single-sign-on with web applications.
             By default, MSAL will try to use a system browser on the mobile platforms, if it is available.
-            See https://aka.ms/msal-net-uses-web-browser.
+            See <see href="https://aka.ms/msal-net-uses-web-browser">our documentation</see> for more details.
             </summary>
+            <remarks>
+            On Windows, macOS, and Linux a system browser can always be used, except in cases where there is no UI (e.g., a SSH session).
+            On Android, the browser must support tabs.
+            </remarks>
+            <returns>Returns <c>true</c> if MSAL can use the system web browser.</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenInteractive(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Interactive request to acquire a token for the specified scopes. The interactive window will be parented to the specified
-            window. The user will be required to select an account
-            </summary>
-            <param name="scopes">Scopes requested to access a protected API</param>
-            <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>The user will be signed-in interactively if needed,
-            and will consent to scopes and do multi-factor authentication if such a policy was enabled in the Azure AD tenant.
-            You can also pass optional parameters by calling:
-            <list type="table">
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithPrompt(Microsoft.Identity.Client.Prompt)"/> </term>
-            <description>to specify the user experience
-            when signing-in</description>
-            </item>
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithUseEmbeddedWebView(System.Boolean)"/></term>
-            <description>to specify
-            if you want to use the embedded web browser or the system default browser</description>
-            </item>
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithSystemWebViewOptions(Microsoft.Identity.Client.SystemWebViewOptions)"/></term>
-            <description>to configure
-            the user experience when using the Default browser</description>
-            </item>
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithAccount(Microsoft.Identity.Client.IAccount)"/> or <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithLoginHint(System.String)"/></term>
-            <description>to prevent the select account dialog from appearing in the case you want to sign-in a specific accounts</description>
-            </item>
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithExtraScopesToConsent(System.Collections.Generic.IEnumerable{System.String})"/></term>
-            <description>if you want to let the
-            user pre-consent to additional scopes (which won't be returned in the access token)</description>
-            </item>
-            <item>
-            <term><see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/></term>
-            <description>to pass
-            additional query parameters to the Identity Provider, and <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithTenantId(System.String)"/>
-            in order to change the tenant of the authority set at the application construction. </description>
-            </item>
-            </list>
-            </remarks>
+             <summary>
+             Interactive request to acquire a token for the specified scopes. The interactive window will be parented to an application
+             window specified through a handle. The user will be required to select an account.
+             </summary>
+             <param name="scopes">Scopes requested to access a protected API.</param>
+             <returns>A builder enabling you to add optional parameters before executing the token request.</returns>
+             <remarks>The user will be signed-in interactively and will consent to scopes, as well as perform a multi-factor authentication step if such a policy was enabled in the Azure AD tenant.
+            
+             You can also pass optional parameters by calling:
+             <list type="bullet">         
+             <item><description><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithPrompt(Microsoft.Identity.Client.Prompt)"/> to specify the user experience when signing-in.</description></item>
+             <item><description><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithUseEmbeddedWebView(System.Boolean)"/> to specify if you want to use the embedded web browser or the default system browser.</description></item>
+             <item><description><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithSystemWebViewOptions(Microsoft.Identity.Client.SystemWebViewOptions)"/> to configure the user experience when using the default system browser.</description></item>
+             <item><description><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithAccount(Microsoft.Identity.Client.IAccount)"/> or <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithLoginHint(System.String)"/> to prevent the account selection dialog from appearing if you want to sign-in a specific account.</description></item>
+             <item><description><see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithExtraScopesToConsent(System.Collections.Generic.IEnumerable{System.String})"/> if you want to let the user pre-consent to additional scopes (which won't be returned in the access token).</description></item>
+             <item><description><see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass additional query parameters to the authentication service.</description></item>
+             <item><description>One of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/> to override the default authority set at the application construction. Note that the overriding authority needs to be part of the known authorities added to the application constructor.</description></item>
+             </list>
+             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenWithDeviceCode(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})">
             <summary>
-            Acquires a security token on a device without a Web browser, by letting the user authenticate on
-            another device. This is done in two steps:
-            <list type="bullet">
-            <item><description>The method first acquires a device code from the authority and returns it to the caller via
-            the <paramref name="deviceCodeResultCallback"/>. This callback takes care of interacting with the user
-            to direct them to authenticate (to a specific URL, with a code)</description></item>
-            <item><description>The method then proceeds to poll for the security
-            token which is granted upon successful login by the user based on the device code information</description></item>
-            </list>
-            See https://aka.ms/msal-device-code-flow.
+            Acquires a security token on a device without a web browser, by letting the user authenticate on
+            another device.
             </summary>
             <param name="scopes">Scopes requested to access a protected API</param>
             <param name="deviceCodeResultCallback">Callback containing information to show the user about how to authenticate and enter the device code.</param>
             <returns>A builder enabling you to add optional parameters before executing the token request</returns>
             <remarks>
-            You can also pass optional parameters by calling:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the Identity Provider, and <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithTenantId(System.String)"/>
-            in order to change the tenant of the authority set at the application construction. 
+            The token acquisition is done in two steps:
+            <list type="bullet">
+            <item><description>The method first acquires a device code from the authority and returns it to the caller via
+            the <paramref name="deviceCodeResultCallback"/>. This callback takes care of interacting with the user
+            to direct them to authenticate (i.e., to a specific URL, with a code)</description></item>
+            <item><description>The method then proceeds to poll for the security
+            token which is granted upon successful login by the user based on the device code information.</description></item>
+            </list>
+            See <see href="https://aka.ms/msal-device-code-flow">our documentation</see> for additional context.
+            You can also pass optional parameters by calling <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/>
+            and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
+            in order to override the default authority. Note that the overriding authority needs to be part
+            of the known authorities added to the application constructor.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenByIntegratedWindowsAuth(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Non-interactive request to acquire a security token for the signed-in user in Windows,
-            via Integrated Windows Authentication. See https://aka.ms/msal-net-iwa.
+            via Integrated Windows Authentication.
             The account used in this overrides is pulled from the operating system as the current user principal name.
             </summary>
             <param name="scopes">Scopes requested to access a protected API</param>
             <returns>A builder enabling you to add optional parameters before executing the token request</returns>
             <remarks>
-            You can also pass optional parameters by calling:
-            <see cref="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.WithUsername(System.String)"/> to pass the identifier
-            of the user account for which to acquire a token with Integrated Windows authentication. This is generally in
-            UserPrincipalName (UPN) format, e.g. john.doe@contoso.com. This is normally not needed, but some Windows administrators
-            set policies preventing applications from looking-up the signed-in user in Windows, and in that case the username
-            needs to be passed.
-            You can also chain with
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
+            See <see href="https://aka.ms/msal-net-iwa">our documentation</see> for more details.
+            You can pass optional parameters by calling <see cref="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.WithUsername(System.String)"/> to pass the identifier
+            of the user account for which to acquire a token with Integrated Windows Authentication. This is generally in
+            User Principal Name (UPN) format (e.g. john.doe@contoso.com). This is normally not needed, but some Windows administrators
+            set policies preventing applications from looking up the signed-in user and in that case the username needs to be passed.
+            You can also chain with <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
+            additional query parameters to the authentication service, along with one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
+            in order to override the default authority. Note that the overriding authority needs to be part
+            of the known authorities added to the application constructor.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.Security.SecureString)">
             <summary>
-            Non-interactive request to acquire a security token from the authority, via Username/Password Authentication.
-            Available only on .net desktop and .net core. See https://aka.ms/msal-net-up for details.
+            Non-interactive request to acquire a token via username and password authentication.
             </summary>
             <param name="scopes">Scopes requested to access a protected API</param>
             <param name="username">Identifier of the user application requests token on behalf.
             Generally in UserPrincipalName (UPN) format, e.g. <c>john.doe@contoso.com</c></param>
             <param name="password">User password as a secure string.</param>
             <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>You can also pass optional parameters by chaining the builder with:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
-            .NET no longer recommends using SecureString and MSAL puts the plaintext value of the password on the wire, as required by the OAuth protocol. See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=net-6.0#remarks">SecureString documentation</see>.
+            <remarks>
+            Available only for .NET Framework and .NET Core applications. See <see href="https://aka.ms/msal-net-up">our documentation</see> for details.
+            You can also pass optional parameters by chaining the builder with <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/>
+            and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
+            to override the default authority. Note that the overriding authority needs to be part
+            of the known authorities added to the application constructor.
+            .NET no longer recommends using SecureString and MSAL puts the plaintext value of the password on the wire, as required by the OAuth protocol. See <see href="https://docs.microsoft.com/dotnet/api/system.security.securestring?view=net-6.0#remarks">SecureString documentation</see> for details.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
             <summary>
-            Non-interactive request to acquire a security token from the authority, via Username/Password Authentication.
-            Available only on .NET desktop and .NET core. See https://aka.ms/msal-net-up for details.
+            Non-interactive request to acquire a token via username and password authentication.
             </summary>
             <param name="scopes">Scopes requested to access a protected API</param>
             <param name="username">Identifier of the user application requests token on behalf.
             Generally in UserPrincipalName (UPN) format, e.g. <c>john.doe@contoso.com</c></param>
             <param name="password">User password as a string.</param>
             <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>You can also pass optional parameters by chaining the builder with:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the Azure AD, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
+            <remarks>
+            Available only for .NET Framework and .NET Core applications. See <see href="https://aka.ms/msal-net-up">our documentation</see> for details.
+            You can also pass optional parameters by chaining the builder with <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/>
+            and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
+            to override the default authority. Note that the overriding authority needs to be part
+            of the known authorities added to the application constructor.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.IPublicClientApplication.AcquireTokenAsync(System.Collections.Generic.IEnumerable{System.String})">
@@ -7006,21 +7025,7 @@
             Abstract class containing common API methods and properties.
             For details see https://aka.ms/msal-net-client-applications
             </summary>
-            <summary>
-            Class to be used to acquire tokens in desktop or mobile applications (Desktop / UWP / Xamarin.iOS / Xamarin.Android).
-            public client applications are not trusted to safely keep application secrets, and therefore they only access web APIs in the name of the user only.
-            For details see https://aka.ms/msal-net-client-applications
-            </summary>
-            <remarks>
-            <para>
-            Unlike <see cref="T:Microsoft.Identity.Client.ConfidentialClientApplication"/>, public clients are unable to hold configuration time secrets,
-            and as a result have no client secret.
-            </para>
-            <para>
-            The redirect URI needed for interactive authentication is automatically determined by the library. It does not need to be passed explicitly in the constructor. Depending
-            on the authentication strategy (e.g., through the Web Authentication Manager, Authentication app, browser, etc.), different redirect URIs will be used by MSAL. Redirect URIs must always be configured in the Azure Active Directory blade in the Azure Portal.
-            </para>
-            </remarks>
+            <inheritdoc cref="T:Microsoft.Identity.Client.IPublicClientApplication"/>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.#ctor(System.String)">
             <summary>
@@ -7356,41 +7361,34 @@
         </member>
         <member name="P:Microsoft.Identity.Client.PublicClientApplication.OperatingSystemAccount">
             <summary>
-            Currently only the Windows broker is able to login with the current user, see https://aka.ms/msal-net-wam for details.
-            
-            A special account value that indicates that the current Operating System account should be used 
-            to login the user. Not all operating systems and authentication flows support this concept, in which 
+            A special account value that indicates that the current operating system account should be used 
+            to log the user in. Not all operating systems and authentication flows support this concept, in which 
             case calling `AcquireTokenSilent` will throw an <see cref="T:Microsoft.Identity.Client.MsalUiRequiredException"/>. 
             </summary>
-        </member>
-        <member name="P:Microsoft.Identity.Client.PublicClientApplication.IsSystemWebViewAvailable">
-            <summary>
-            Returns true if MSAL can use a system browser.
-            </summary>
             <remarks>
-            On Windows, Mac and Linux a system browser can always be used, except in cases where there is no UI, e.g. SSH connection.
-            On Android, the browser must support tabs.
+            Currently only the Windows broker is able to login with the current operating system user. For additional details, see <see href="https://aka.ms/msal-net-wam">the documentation on the Windows broker</see>.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsEmbeddedWebViewAvailable">
             <summary>
-            Returns true if MSAL can use an embedded web view (browser). 
+            Returns <c>true</c> if MSAL can use an embedded web view (web browser).
             </summary>
             <remarks>
-            Currently there are no embedded web views on Mac and Linux. On Windows, app developers or users should install 
-            the WebView2 runtime and this property will inform if the runtime is available, see https://aka.ms/msal-net-webview2
+            All .NET Framework applications will use the legacy web view. .NET 6 and .NET Core applications must use the <see href="https://www.nuget.org/packages/Microsoft.Identity.Client.Desktop">Microsoft.Identity.Client.Desktop</see> package with WebView2. .NET 6 for Windows comes with WebView2 by default.
+            WebView2 UI is only shown for non-AAD authorities.
+            Refer to <see href="https://aka.ms/msal-net-webview2">our documentation</see> for additional details.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsUserInteractive">
             <summary>
-            Returns false when the program runs in headless OS, for example when SSH-ed into a Linux machine.
-            Browsers (web views) and brokers cannot be used if there is no UI support. Instead, please use <see cref="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenWithDeviceCode(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})"/>
+            Returns <c>false</c> when the application runs in headless mode (e.g., when SSH-d into a Linux machine).
+            Browsers (web views) and brokers cannot be used if there is no UI support. For those scenarios, use <see cref="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenWithDeviceCode(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})"/>.
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsBrokerAvailable">
             <summary>
-            Returns <c>true</c> if a broker can be used.
-            This method is only needed to be used in mobile scenarios which support Mobile Application Management. In other supported scenarios, use <c>WithBroker</c> by itself, which will fall back to use a browser if broker is unavailable.
+            Returns <c>true</c> if an authentication broker can be used.
+            This method is only needed for mobile scenarios which support Mobile Application Management (MAM). In other cases, use <c>WithBroker</c>, which will fall back to use a browser if an authentication broker is unavailable.
             </summary>
             <remarks>
             <list type="bullet">
@@ -7400,114 +7398,6 @@
             <item><description>In .NET classic or .NET Core 3.1 apps, install Microsoft.Identity.Client.Desktop first and call <c>WithDesktopFeatures()</c>.</description></item>
             <item><description>In mobile apps, the device must be Intune joined and Authenticator or Company Portal must be installed. See https://aka.ms/msal-brokers </description></item>
             </list>
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenInteractive(System.Collections.Generic.IEnumerable{System.String})">
-             <summary>
-             Interactive request to acquire a token for the specified scopes. The interactive window will be parented to the specified
-             window. The user will be required to select an account.
-             </summary>
-             <param name="scopes">Scopes requested to access a protected API</param>
-             <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-             <remarks>The user will be signed-in interactively if needed,
-             and will consent to scopes and do multi-factor authentication if such a policy was enabled in the Azure AD tenant.
-            
-             You can also pass optional parameters by calling:
-                     
-             <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithPrompt(Microsoft.Identity.Client.Prompt)"/> to specify the user experience
-             when signing-in, <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithUseEmbeddedWebView(System.Boolean)"/> to specify
-             if you want to use the embedded web browser or the system default browser,
-             <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithSystemWebViewOptions(Microsoft.Identity.Client.SystemWebViewOptions)"/> to configure
-             the user experience when using the Default browser,
-             <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithAccount(Microsoft.Identity.Client.IAccount)"/> or <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithLoginHint(System.String)"/>
-             to prevent the select account dialog from appearing in the case you want to sign-in a specific account,
-             <see cref="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.WithExtraScopesToConsent(System.Collections.Generic.IEnumerable{System.String})"/> if you want to let the
-             user pre-consent to additional scopes (which won't be returned in the access token),
-             <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-             additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-             in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-             of the known authorities added to the application construction.
-             </remarks>
-        </member>
-        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenWithDeviceCode(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})">
-            <summary>
-            Acquires a security token on a device without a web browser, by letting the user authenticate on
-            another device. This is done in two steps:
-            <list type="bullet">
-            <item><description>The method first acquires a device code from the authority and returns it to the caller via
-            the <paramref name="deviceCodeResultCallback"/>. This callback takes care of interacting with the user
-            to direct them to authenticate (to a specific URL, with a code)</description></item>
-            <item><description>The method then proceeds to poll for the security
-            token which is granted upon successful login by the user based on the device code information</description></item>
-            </list>
-            See https://aka.ms/msal-device-code-flow.
-            </summary>
-            <param name="scopes">Scopes requested to access a protected API</param>
-            <param name="deviceCodeResultCallback">Callback containing information to show the user about how to authenticate and enter the device code.</param>
-            <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>
-            You can also pass optional parameters by calling:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByIntegratedWindowsAuth(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Non-interactive request to acquire a security token for the signed-in user in Windows,
-            via Integrated Windows Authentication. See https://aka.ms/msal-net-iwa.
-            The account used in this overrides is pulled from the operating system as the current user principal name.
-            </summary>
-            <param name="scopes">Scopes requested to access a protected API</param>
-            <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>
-            You can also pass optional parameters by calling:
-            <see cref="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.WithUsername(System.String)"/> to pass the identifier
-            of the user account for which to acquire a token with Integrated Windows authentication. This is generally in
-            UserPrincipalName (UPN) format, e.g. john.doe@contoso.com. This is normally not needed, but some Windows administrators
-            set policies preventing applications from looking-up the signed-in user in Windows, and in that case the username
-            needs to be passed.
-            You can also chain with
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.Security.SecureString)">
-            <summary>
-            Non-interactive request to acquire a security token from the authority, via Username/Password Authentication.
-            See https://aka.ms/msal-net-up for details.
-            </summary>
-            <param name="scopes">Scopes requested to access a protected API</param>
-            <param name="username">Identifier of the user application requests token on behalf.
-            Generally in UserPrincipalName (UPN) format, e.g. <c>john.doe@contoso.com</c></param>
-            <param name="password">User password as a secure string.</param>
-            <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>You can also pass optional parameters by chaining the builder with:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the STS, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
-            .NET no longer recommends using SecureString and MSAL puts the plaintext value of the password on the wire, as required by the OAuth protocol. See <see href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=net-6.0#remarks">SecureString documentation</see>.
-            </remarks>
-        </member>
-        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
-            <summary>
-            Non-interactive request to acquire a security token from the authority, via Username/Password Authentication.
-            See https://aka.ms/msal-net-up for details.
-            </summary>
-            <param name="scopes">Scopes requested to access a protected API</param>
-            <param name="username">Identifier of the user application requests token on behalf.
-            Generally in UserPrincipalName (UPN) format, e.g. <c>john.doe@contoso.com</c></param>
-            <param name="password">User password as a string.</param>
-            <returns>A builder enabling you to add optional parameters before executing the token request</returns>
-            <remarks>You can also pass optional parameters by chaining the builder with:
-            <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithExtraQueryParameters(System.Collections.Generic.Dictionary{System.String,System.String})"/> to pass
-            additional query parameters to the Azure AD, and one of the overrides of <see cref="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.WithAuthority(System.String,System.Boolean)"/>
-            in order to override the default authority set at the application construction. Note that the overriding authority needs to be part
-            of the known authorities added to the application construction.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsProofOfPossessionSupportedByClient">
@@ -9861,10 +9751,8 @@
             A simple implementation of the HttpClient factory that uses a managed HttpClientHandler
             </summary>
             <remarks>
-            This implementation is not suitable for high-scale applications / confidential client scenarios
-            because a static HttpClient might run into DNS issues (and creating new HttpClients leads to a port exhaustion issue).
-            Mobile platforms should use HttpClientHandlers that are platform specific.
-            .NET Core should use the IHttpClientFactory, but MSAL cannot take a dependency on it as it has too many dependencies itself.
+            .NET should use the IHttpClientFactory, but MSAL cannot take a dependency on it.
+            .NET should use SocketHandler, but UseDefaultCredentials doesn't work with it 
             </remarks>
         </member>
         <member name="T:Microsoft.Identity.Client.PlatformsCommon.Shared.Win32VersionApi">
@@ -10780,12 +10668,26 @@
             Resource for which to request scopes.
             This is the App ID URI of the API that returned the WWW-Authenticate header.
             </summary>
+            <remarks>
+            Clients that perform resource validation (e.g. by comparing the host part of the resource against a list of known good hosts), 
+            can still use the indexer to retrieve the raw value of the resource / scope.
+            
+            If a resource is used, add "/.default" to it to transform it into a scope, e.g. "https://graph.microsoft.com/.default" is the OAuth2 scope for "https://graph.microsoft.com" resource.
+            MSAL only works with scopes.
+            </remarks>
         </member>
         <member name="P:Microsoft.Identity.Client.WwwAuthenticateParameters.Scopes">
             <summary>
             Scopes to request.
             If it's not provided by the web API, it's computed from the Resource.
             </summary>
+            <remarks>
+            Clients that perform resource validation (e.g. by comparing the host part of the resource against a list of known good hosts), 
+            can still use the indexer to retrieve the raw value of the resource / scope. 
+            
+            If a resource is used, add "/.default" to it to transform it into a scope, e.g. "https://graph.microsoft.com/.default" is the OAuth2 scope for "https://graph.microsoft.com" resource.
+            MSAL only works with scopes.
+            </remarks>
         </member>
         <member name="P:Microsoft.Identity.Client.WwwAuthenticateParameters.Authority">
             <summary>
