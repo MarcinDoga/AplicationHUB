@@ -1,2 +1,2 @@
-1.2.3 Achievements Hotfix Update
-#26A69A
+1.2.4.0 Animations Update
+#F57F17
