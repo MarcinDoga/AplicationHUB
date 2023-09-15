@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.2.5.0" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="AthermoBase" version="1.2.5.1" language="neutral" processorArchitecture="amd64" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1294904">
-      <assemblyIdentity name="AthermoBase" version="1.2.5.0" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1394232">
+      <assemblyIdentity name="AthermoBase" version="1.2.5.1" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eg0hdvRhKmC6UE6xvzxCBWT5/ZaDmjPxYYRs9Aybic4=</dsig:DigestValue>
+        <dsig:DigestValue>P++VNtFcgzmsw07C1ZHC1O2nea0pg4Pr5fkyvZ5Pe1w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -199,14 +199,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.IdentityModel.Abstractions.dll" size="18808">
-      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" version="6.32.1.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.IdentityModel.Abstractions.dll" size="18960">
+      <assemblyIdentity name="Microsoft.IdentityModel.Abstractions" version="6.32.2.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>czL/+e59AoB9iQ/+f+83fz9cUhnHCbfgU7Y8BeipLvc=</dsig:DigestValue>
+        <dsig:DigestValue>ddl+opTqtiOCl1en6qVlA8cs7/pd6HTuhSc/W5y7dGI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -504,7 +504,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>PBQT9lq8psgzP0ajD24xbOkaoXvPbQ85t3IQCHeer3E=</dsig:DigestValue>
+      <dsig:DigestValue>zJpAjaZ2ePJjctRES6dITvraQRxLQv+QA7O6yI0aClg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Properties\2022-10-02_21.57.18 — kopia.png" size="164770">
@@ -570,7 +570,7 @@
       <dsig:DigestValue>SFokE8XQjPxBZEpM2KnPmrcmjEhxHLdzndXzfJkiIbo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scripts\jquery-3.7.0.intellisense.js" size="162316">
+  <file name="Scripts\jquery-3.7.1.intellisense.js" size="162316">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
@@ -579,40 +579,40 @@
       <dsig:DigestValue>vZUlrgykbqxLYRukNBBpgPgRuG8Bi1Tr8IPMp65ar94=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scripts\jquery-3.7.0.js" size="284996">
+  <file name="Scripts\jquery-3.7.1.js" size="285314">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=</dsig:DigestValue>
+      <dsig:DigestValue>eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scripts\jquery-3.7.0.min.js" size="87462">
+  <file name="Scripts\jquery-3.7.1.min.js" size="87533">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=</dsig:DigestValue>
+      <dsig:DigestValue>/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scripts\jquery-3.7.0.slim.js" size="231697">
+  <file name="Scripts\jquery-3.7.1.slim.js" size="232015">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=</dsig:DigestValue>
+      <dsig:DigestValue>UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Scripts\jquery-3.7.0.slim.min.js" size="70193">
+  <file name="Scripts\jquery-3.7.1.slim.min.js" size="70264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=</dsig:DigestValue>
+      <dsig:DigestValue>kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="small.ico" size="67646">
