@@ -1,4 +1,1 @@
-Visible = true
-Uwaga! Trwają prace nad naprawieniem krytycznego błędu aplikacji związanego z tworzeniem kont graczy, proszę się wstrzymać z ich tworzeniem na wersji 1.2.5.0, ponieważ grozi to usunięciem!
-Remark! Work is underway to fix a critical bug in the application related to creating player accounts, please refrain from creating them on version 1.2.5.0, as it threatens to be deleted!
-Maroon
+Visible = false
