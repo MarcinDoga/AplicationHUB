@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.2.5.8" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="AthermoBase" version="1.2.6.0" language="neutral" processorArchitecture="amd64" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1405496">
-      <assemblyIdentity name="AthermoBase" version="1.2.5.8" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1408568">
+      <assemblyIdentity name="AthermoBase" version="1.2.6.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OnfKBXhHbWaGEUjW4CWI7WNO47FPOoawzgGRXGxu//w=</dsig:DigestValue>
+        <dsig:DigestValue>Uc1GZRYYyvLwIo7116JckucjEwqMA5VtouTD3fClpUY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

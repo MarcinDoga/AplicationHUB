@@ -1,2 +1,2 @@
-1.2.5.8 Players Update
-#3A8F3B
+1.2.6.0 Events and Graphs Update
+#3C9694
