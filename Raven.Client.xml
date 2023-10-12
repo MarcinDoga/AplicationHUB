@@ -124,89 +124,89 @@
             The old index name
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForIndex(System.String)">
+        <member name="M:Raven.Client.Documents.Changes.ICounterChanges`1.ForAllCounters">
             <summary>
-            Subscribe to changes for specified index only.
+            Subscribe to changes for all counters.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForDocument(System.String)">
+        <member name="M:Raven.Client.Documents.Changes.ICounterChanges`1.ForCounter(System.String)">
+            <summary>
+            Subscribe to changes for all counters with a given name.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.ICounterChanges`1.ForCounterOfDocument(System.String,System.String)">
+            <summary>
+            Subscribe to changes for counter from a given document and with given name.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.ICounterChanges`1.ForCountersOfDocument(System.String)">
+            <summary>
+            Subscribe to changes for all counters from a given document.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IDocumentChanges`1.ForDocument(System.String)">
             <summary>
             Subscribe to changes for specified document only.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForAllDocuments">
+        <member name="M:Raven.Client.Documents.Changes.IDocumentChanges`1.ForAllDocuments">
             <summary>
             Subscribe to changes for all documents.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForOperationId(System.Int64)">
+        <member name="M:Raven.Client.Documents.Changes.IDocumentChanges`1.ForDocumentsStartingWith(System.String)">
+            <summary>
+            Subscribe to changes for all documents that Id starts with given prefix.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IDocumentChanges`1.ForDocumentsInCollection(System.String)">
+            <summary>
+            Subscribe to changes for all documents that belong to specified collection.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IDocumentChanges`1.ForDocumentsInCollection``1">
+            <summary>
+            Subscribe to changes for all documents that belong to specified collection.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IIndexChanges`1.ForIndex(System.String)">
+            <summary>
+            Subscribe to changes for specified index only.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IIndexChanges`1.ForAllIndexes">
+            <summary>
+            Subscribe to changes for all indexes.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Changes.IOperationChanges`1.ForOperationId(System.Int64)">
             <summary>
             Subscribe to changes for specified operation only.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForAllOperations">
+        <member name="M:Raven.Client.Documents.Changes.IOperationChanges`1.ForAllOperations">
             <summary>
             Subscribe to change for all operation statuses.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForAllIndexes">
-            <summary>
-            Subscribe to changes for all indexes.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForDocumentsStartingWith(System.String)">
-            <summary>
-            Subscribe to changes for all documents that Id starts with given prefix.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForDocumentsInCollection(System.String)">
-            <summary>
-            Subscribe to changes for all documents that belong to specified collection.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForDocumentsInCollection``1">
-            <summary>
-            Subscribe to changes for all documents that belong to specified collection.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForAllCounters">
-            <summary>
-            Subscribe to changes for all counters.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForCounter(System.String)">
-            <summary>
-            Subscribe to changes for all counters with a given name.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForCounterOfDocument(System.String,System.String)">
-            <summary>
-            Subscribe to changes for counter from a given document and with given name.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForCountersOfDocument(System.String)">
-            <summary>
-            Subscribe to changes for all counters from a given document.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForAllTimeSeries">
+        <member name="M:Raven.Client.Documents.Changes.ITimeSeriesChanges`1.ForAllTimeSeries">
             <summary>
             Subscribe to changes for all timeseries.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForTimeSeries(System.String)">
+        <member name="M:Raven.Client.Documents.Changes.ITimeSeriesChanges`1.ForTimeSeries(System.String)">
             <summary>
             Subscribe to changes for all timeseries with a given name.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForTimeSeriesOfDocument(System.String,System.String)">
+        <member name="M:Raven.Client.Documents.Changes.ITimeSeriesChanges`1.ForTimeSeriesOfDocument(System.String,System.String)">
             <summary>
             Subscribe to changes for timeseries from a given document and with given name.
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Changes.IDatabaseChanges.ForTimeSeriesOfDocument(System.String)">
+        <member name="M:Raven.Client.Documents.Changes.ITimeSeriesChanges`1.ForTimeSeriesOfDocument(System.String)">
             <summary>
             Subscribe to changes for all timeseries from a given document.
             </summary>
@@ -368,9 +368,14 @@
             Default: 15 Seconds.
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.UseCompression">
+        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.UseHttpCompression">
             <summary>
-            Should accept gzip/deflate headers be added to all requests?
+            Use gzip compression when sending content of HTTP request
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.UseHttpDecompression">
+            <summary>
+            Can accept compressed HTTP response content and will use gzip/deflate decompression methods
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.LoadBalancerPerSessionContextSelector">
@@ -398,14 +403,6 @@
                 Default value is 512MB on 64 bits, 32MB on 32 bits
             </summary>
             <value>The max size of cache in requestExecutor.</value>
-        </member>
-        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.ThrowIfQueryPageSizeIsNotSet">
-            <summary>
-                If set to 'true' then it will throw an exception when any query is performed (in session)
-                without explicit page size set.
-                This can be useful for development purposes to pinpoint all the possible performance bottlenecks
-                since from 4.0 there is no limitation for number of results returned from server.
-            </summary>
         </member>
         <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.UseOptimisticConcurrency">
             <summary>
@@ -506,6 +503,11 @@
         <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.TopologyCacheLocation">
             <summary>
             Changes the location of topology cache files. By default it is set to application base directory (AppContext.BaseDirectory)
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Conventions.DocumentConventions.DisposeCertificate">
+            <summary>
+            Disposes the 'DocumentStore.Certificate' during DocumentStore disposal
             </summary>
         </member>
         <member name="M:Raven.Client.Documents.Conventions.DocumentConventions.DefaultGetCollectionName(System.Type)">
@@ -802,13 +804,6 @@
             Generate a hilo ID for each given type
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Identity.DefaultAsyncHiLoIdGenerator.GenerateDocumentIdAsync(System.Object)">
-            <summary>
-            Generates the document ID.
-            </summary>
-            <param name="entity">The entity.</param>
-            <returns></returns>
-        </member>
         <member name="M:Raven.Client.Documents.Identity.GenerateEntityIdOnTheClient.TryGetIdFromInstance(System.Object,System.String@)">
             <summary>
             Attempts to get the document ID from an instance 
@@ -1016,6 +1011,11 @@
             Create a new instance
             </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Indexes.AbstractGenericIndexCreationTask`1.CompoundFields">
+            <summary>
+            Expert: List of compound fields that Corax can use to optimize certain queries
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Indexes.AbstractGenericIndexCreationTask`1.Reduce">
             <summary>
             The reduce definition
@@ -1213,6 +1213,11 @@
             <para>Default value: null means that the configuration from the database will be used.</para>
              </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Indexes.AbstractIndexCreationTaskBase`1.ArchivedDataProcessingBehavior">
+            <summary>
+            Set whether archived, unarchived or all documents will be indexed
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Indexes.AbstractIndexCreationTaskBase`1.State">
             <summary>
             Index state
@@ -1249,6 +1254,11 @@
         <member name="M:Raven.Client.Documents.Indexes.AbstractIndexCreationTaskBase`1.Execute(Raven.Client.Documents.IDocumentStore,Raven.Client.Documents.Conventions.DocumentConventions,System.String)">
             <summary>
             Executes the index creation against the specified document database using the specified conventions
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Indexes.AbstractIndexCreationTaskBase`1.CompoundFieldsStrings">
+            <summary>
+            Expert: List of compound fields that Corax can use to optimize certain queries
             </summary>
         </member>
         <member name="M:Raven.Client.Documents.Indexes.AbstractIndexCreationTaskBase`1.ExecuteAsync(Raven.Client.Documents.IDocumentStore,Raven.Client.Documents.Conventions.DocumentConventions,System.String,System.Threading.CancellationToken)">
@@ -2163,6 +2173,13 @@
             Additional code files to be compiled with this index.
             </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Indexes.IndexDefinition.CompoundFields">
+            <summary>
+            Expert:
+            List of compound fields that can be used by the Corax indexing engine to
+            optimize certain queries. Has no effect on Lucene indexes. 
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Indexes.IndexDefinition.Maps">
             <summary>
             All the map functions for this index
@@ -2332,6 +2349,16 @@
         <member name="P:Raven.Client.Documents.Indexes.AbstractIndexDefinitionBuilder`3.State">
             <summary>
             Index state
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Indexes.AbstractIndexDefinitionBuilder`3.CompoundFieldsStrings">
+            <summary>
+            Expert: List of compound fields that Corax can use to optimize certain queries
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Indexes.AbstractIndexDefinitionBuilder`3.CompoundFields">
+            <summary>
+            Expert: List of compound fields that Corax can use to optimize certain queries
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Indexes.AbstractIndexDefinitionBuilder`3.DeploymentMode">
@@ -2588,6 +2615,11 @@
         <member name="P:Raven.Client.Documents.Indexes.IndexStats.SearchEngineType">
             <summary>
             Indicates search engine.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Indexes.IndexStats.ArchivedDataProcessingBehavior">
+            <summary>
+            Indicates whether archived, unarchived or all documents will be indexed
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Indexes.IndexStats.EntriesCount">
@@ -3769,12 +3801,17 @@
             Set the fields to fetch
             </summary>
         </member>
+        <member name="M:Raven.Client.Documents.Linq.RavenQueryInspector`1.FieldsToFetch(System.Collections.Generic.IEnumerable{System.Reflection.MemberInfo})">
+            <summary>
+            Set the fields to fetch
+            </summary>
+        </member>
         <member name="T:Raven.Client.Documents.Linq.RavenQueryProvider`1">
             <summary>
             An implementation of <see cref="T:Raven.Client.Documents.Linq.IRavenQueryProvider"/>
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Linq.RavenQueryProvider`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.String,System.String,System.Type,Raven.Client.Documents.Session.QueryStatistics,Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.Boolean,Raven.Client.Documents.Conventions.DocumentConventions,System.Collections.Generic.HashSet{Raven.Client.Documents.Linq.FieldToFetch})">
+        <member name="M:Raven.Client.Documents.Linq.RavenQueryProvider`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.String,System.String,System.Type,Raven.Client.Documents.Session.QueryStatistics,Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.Boolean,Raven.Client.Documents.Conventions.DocumentConventions,System.Collections.Generic.HashSet{Raven.Client.Documents.Linq.FieldToFetch},System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Raven.Client.Documents.Linq.RavenQueryProvider`1"/> class.
             </summary>
@@ -3998,6 +4035,56 @@
             Get only the first item (or throw if there are more than one) or null if empty
             </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfIndexes">
+            <summary>
+            Total number of indexes in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfDocuments">
+            <summary>
+            Total number of documents in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfRevisionDocuments">
+            <summary>
+            Total number of revision documents in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfDocumentsConflicts">
+            <summary>
+            Total number of documents conflicts in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfTombstones">
+            <summary>
+            Total number of tombstones in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfConflicts">
+            <summary>
+            Total number of conflicts in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfAttachments">
+            <summary>
+            Total number of attachments in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfCounterEntries">
+            <summary>
+            Total number of counter-group entries in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.CountOfTimeSeriesSegments">
+            <summary>
+            Total number of time-series segments in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.AbstractDatabaseStatistics`1.Indexes">
+            <summary>
+            Statistics for each index in database.
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Operations.Backups.LocalSettings.FolderPath">
             <summary>
             Path to local folder. If not empty, backups will be held in this folder and not deleted. 
@@ -4070,26 +4157,6 @@
             Limits the amount of base operation per second allowed.
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfIdentities">
-            <summary>
-            Total number of identities in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfCompareExchange">
-            <summary>
-            Total number of compare-exchange values in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfCompareExchangeTombstones">
-            <summary>
-            Total number of compare-exchange tombstones values in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfTimeSeriesDeletedRanges">
-            <summary>
-            Total number of TimeSeries Deleted Ranges values in database.
-            </summary>
-        </member>
         <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.LastDocEtag">
             <summary>
             Last document etag in database.
@@ -4100,64 +4167,14 @@
             Last database etag
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfIndexes">
-            <summary>
-            Total number of indexes in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfDocuments">
-            <summary>
-            Total number of documents in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfRevisionDocuments">
-            <summary>
-            Total number of revision documents in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfDocumentsConflicts">
-            <summary>
-            Total number of documents conflicts in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfTombstones">
-            <summary>
-            Total number of tombstones in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfConflicts">
-            <summary>
-            Total number of conflicts in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfAttachments">
-            <summary>
-            Total number of attachments in database.
-            </summary>
-        </member>
         <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfUniqueAttachments">
             <summary>
             Total number of attachments in database.
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfCounterEntries">
-            <summary>
-            Total number of counter-group entries in database.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.CountOfTimeSeriesSegments">
-            <summary>
-            Total number of time-series segments in database.
-            </summary>
-        </member>
         <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.StaleIndexes">
             <summary>
             List of stale index names in database..
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.Indexes">
-            <summary>
-            Statistics for each index in database.
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Operations.DatabaseStatistics.DatabaseChangeVector">
@@ -4180,6 +4197,46 @@
             Storage engine component that handles the memory-mapped files
             </summary>
         </member>
+        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfIdentities">
+            <summary>
+            Total number of identities in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfCompareExchange">
+            <summary>
+            Total number of compare-exchange values in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfCompareExchangeTombstones">
+            <summary>
+            Total number of compare-exchange tombstones values in database.
+            </summary>
+        </member>
+        <member name="P:Raven.Client.Documents.Operations.DetailedDatabaseStatistics.CountOfTimeSeriesDeletedRanges">
+            <summary>
+            Total number of TimeSeries Deleted Ranges values in database.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Operations.Indexes.StartIndexingOperation.StartIndexingCommand.#ctor(System.String)">
+            <summary>
+            For Studio use only
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Operations.Indexes.StartIndexingOperation.StartIndexingCommand.#ctor(System.String,System.String)">
+            <summary>
+            For Studio use only
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Operations.Indexes.StopIndexingOperation.StopIndexingCommand.#ctor(System.String)">
+            <summary>
+            For Studio use only
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Operations.Indexes.StopIndexingOperation.StopIndexingCommand.#ctor(System.String,System.String)">
+            <summary>
+            For Studio use only
+            </summary>
+        </member>
         <member name="T:Raven.Client.Documents.Operations.DeterminateProgress">
             <summary>
             Used to describe operations with progress expressed as percentage (using processed / total items)
@@ -4193,6 +4250,11 @@
         <member name="T:Raven.Client.Documents.Operations.IndeterminateProgress">
             <summary>
             Used to describe indeterminate progress (we use text to describe progress)
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Operations.MaintenanceOperationExecutor.ForShardWithProxy(System.Int32)">
+            <summary>
+            For internal use only
             </summary>
         </member>
         <member name="M:Raven.Client.Documents.Operations.Operation.FetchOperationStatus">
@@ -4327,11 +4389,7 @@
             Define the aggregation of this policy
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Queries.Facets.Facet.FieldName">
-            <summary>
-            Name of field the facet aggregate on
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "P:Raven.Client.Documents.Queries.Facets.Facet.FieldName" -->
         <member name="P:Raven.Client.Documents.Queries.Facets.Facet`1.FieldName">
             <summary>
             Name of field the facet aggregate on
@@ -4664,24 +4722,9 @@
             Allow to skip duplicate checking during queries
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Queries.IndexQueryBase`1.PageSizeSet">
-            <summary>
-            Whether the page size was explicitly set or still at its default value
-            </summary>
-        </member>
         <member name="P:Raven.Client.Documents.Queries.IndexQueryBase`1.Query">
             <summary>
             Actual query that will be performed (Lucene syntax).
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Queries.IndexQueryBase`1.Start">
-            <summary>
-            Number of records that should be skipped.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Queries.IndexQueryBase`1.PageSize">
-            <summary>
-            Maximum number of records that will be retrieved.
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Queries.IndexQueryBase`1.WaitForNonStaleResults">
@@ -4750,11 +4793,6 @@
                 The fields to compare
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Queries.MoreLikeThis.MoreLikeThisQueryResult`2.DurationInMs">
-            <summary>
-            The duration of actually executing the query server side
-            </summary>
-        </member>
         <member name="F:Raven.Client.Documents.Queries.ProjectionBehavior.Default">
             <summary>
             Try to extract value from index field (if field value is stored in index), on a failure (or when field value is not stored in index) extract value from a document
@@ -4816,11 +4854,6 @@
         <member name="P:Raven.Client.Documents.Queries.QueryResult`2.TotalResults">
             <summary>
             Gets or sets the total results for this query
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Documents.Queries.QueryResult`2.LongTotalResults">
-            <summary>
-            Gets or sets the total results as int64 for this query
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Queries.QueryResult`2.CappedMaxResults">
@@ -5213,14 +5246,14 @@
               This function exists solely to forbid Linq group by clause on IDocumentQuery
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.Take(System.Int64)">
             <summary>
               Takes the specified count.
             </summary>
             <param name = "count">The count.</param>
             <returns></returns>
         </member>
-        <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.Skip(System.Int64)">
             <summary>
               Skips the specified count.
             </summary>
@@ -5370,10 +5403,10 @@
             <summary>
               Specifies a proximity distance for the phrase in the last search clause
             </summary>
-            <param name = "proximity">number of words within</param>
+            <param name = "proximity">Number of terms between the search terms</param>
             <returns></returns>
             <remarks>
-              http://lucene.apache.org/java/2_4_0/queryparsersyntax.html#Proximity%20Searches
+              https://lucene.apache.org/core/2_9_4/queryparsersyntax.html#Proximity%20Searches
             </remarks>
         </member>
         <member name="M:Raven.Client.Documents.Session.AbstractDocumentQuery`2.OrderBy(System.String,Raven.Client.Documents.Session.OrderingType)">
@@ -5530,16 +5563,16 @@
         <member name="P:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IFilterDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#Not">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncRawDocumentQuery{T}}#Skip(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IAsyncRawDocumentQuery{T}}#Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncRawDocumentQuery{T}}#Take(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#Take(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IAsyncRawDocumentQuery{T}}#Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#Skip(System.Int64)">
             <inheritdoc />
         </member>
         <member name="M:Raven.Client.Documents.Session.AsyncDocumentQuery`1.Raven#Client#Documents#Session#IFilterDocumentQueryBase{T,Raven#Client#Documents#Session#IAsyncDocumentQuery{T}}#WhereLucene(System.String,System.String)">
@@ -6318,16 +6351,16 @@
         <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.GetQueryResult">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IDocumentQuery{T}}#Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IRawDocumentQuery{T}}#Skip(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IRawDocumentQuery{T}}#Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IRawDocumentQuery{T}}#Take(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IDocumentQuery{T}}#Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IDocumentQuery{T}}#Take(System.Int64)">
             <inheritdoc />
         </member>
-        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IQueryBase{T,Raven#Client#Documents#Session#IRawDocumentQuery{T}}#Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IPagingDocumentQueryBase{T,Raven#Client#Documents#Session#IDocumentQuery{T}}#Skip(System.Int64)">
             <inheritdoc />
         </member>
         <member name="M:Raven.Client.Documents.Session.DocumentQuery`1.Raven#Client#Documents#Session#IFilterDocumentQueryBase{T,Raven#Client#Documents#Session#IDocumentQuery{T}}#WhereLucene(System.String,System.String)">
@@ -7017,14 +7050,14 @@
             </summary>
             <param name="includes"></param>
         </member>
-        <member name="M:Raven.Client.Documents.Session.IAbstractDocumentQuery`1.Take(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.IAbstractDocumentQuery`1.Take(System.Int64)">
             <summary>
               Takes the specified count.
             </summary>
             <param name = "count">The count.</param>
             <returns></returns>
         </member>
-        <member name="M:Raven.Client.Documents.Session.IAbstractDocumentQuery`1.Skip(System.Int32)">
+        <member name="M:Raven.Client.Documents.Session.IAbstractDocumentQuery`1.Skip(System.Int64)">
             <summary>
               Skips the specified count.
             </summary>
@@ -7447,12 +7480,6 @@
             </summary>
             <typeparam name="T">The query result type</typeparam>
         </member>
-        <member name="M:Raven.Client.Documents.Session.IAdvancedSessionOperations.GraphQuery``1(System.String)">
-            <summary>
-            Issue a graph query based on the raw match query provided
-            </summary>
-            <typeparam name="T">The query result type</typeparam>
-        </member>
         <member name="M:Raven.Client.Documents.Session.IAdvancedSessionOperations.Exists(System.String)">
             <summary>
                 Check if document exists
@@ -7672,12 +7699,6 @@
         <member name="M:Raven.Client.Documents.Session.IAsyncAdvancedSessionOperations.AsyncRawQuery``1(System.String)">
             <summary>
             Query the specified index using provided raw query
-            </summary>
-            <typeparam name="T">The query result type</typeparam>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IAsyncAdvancedSessionOperations.AsyncGraphQuery``1(System.String)">
-            <summary>
-            Issue a graph query based on the raw match query provided
             </summary>
             <typeparam name="T">The query result type</typeparam>
         </member>
@@ -7974,6 +7995,11 @@
             <param name="builder">Builder of a Filter query</param>
             <param name="limit">Limits the number of documents processed by Filter.</param>
             <returns></returns>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IAsyncDocumentQuery`1.ShardContext(System.Action{Raven.Client.Documents.Session.Querying.Sharding.IQueryShardedContextBuilder})">
+            <summary>
+            It adds additional shard context to a query so it will be executed only on the relevant shards
+            </summary>
         </member>
         <member name="T:Raven.Client.Documents.Session.IAsyncDocumentSession">
             <summary>
@@ -8465,90 +8491,9 @@
             <param name="limit">Limits the number of documents processed by Filter.</param>
             <returns></returns>
         </member>
-        <member name="P:Raven.Client.Documents.Session.IQueryBase`2.Conventions">
+        <member name="M:Raven.Client.Documents.Session.IDocumentQuery`1.ShardContext(System.Action{Raven.Client.Documents.Session.Querying.Sharding.IQueryShardedContextBuilder})">
             <summary>
-                Gets the document convention from the query session
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AfterQueryExecuted(System.Action{Raven.Client.Documents.Queries.QueryResult})">
-            <summary>
-                Callback to get the results of the query
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AfterStreamExecuted(System.Action{Sparrow.Json.BlittableJsonReaderObject})">
-            <summary>
-                Callback to get the results of the stream
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.BeforeQueryExecuted(System.Action{Raven.Client.Documents.Queries.IndexQuery})">
-            <summary>
-                Allows you to modify the index query before it is sent to the server
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.InvokeAfterQueryExecuted(Raven.Client.Documents.Queries.QueryResult)">
-            <summary>
-                Called externally to raise the after query executed callback
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.InvokeAfterStreamExecuted(Sparrow.Json.BlittableJsonReaderObject)">
-            <summary>
-                Called externally to raise the after query executed callback
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.NoCaching">
-            <summary>
-                Disables caching for query results.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.NoTracking">
-            <summary>
-                Disables tracking for queried entities by Raven's Unit of Work.
-                Usage of this option will prevent holding query results in memory.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Timings(Raven.Client.Documents.Queries.Timings.QueryTimings@)">
-            <summary>
-                Enables calculation of timings for various parts of a query (Lucene search, loading documents, transforming
-                results). Default: false
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Skip(System.Int32)">
-            <summary>
-                Skips the specified count.
-            </summary>
-            <param name="count">Number of items to skip.</param>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Statistics(Raven.Client.Documents.Session.QueryStatistics@)">
-            <summary>
-                Provide statistics about the query, such as total count of matching records
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Take(System.Int32)">
-            <summary>
-                Takes the specified count.
-            </summary>
-            <param name="count">Maximum number of items to take.</param>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.UsingDefaultOperator(Raven.Client.Documents.Queries.QueryOperator)">
-            <summary>
-                Select the default operator to use for this query
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.WaitForNonStaleResults(System.Nullable{System.TimeSpan})">
-            <summary>
-              Instruct the query to wait for non stale results.
-              This shouldn't be used outside of unit tests unless you are well aware of the implications
-            </summary>
-            <param name = "waitTimeout">Maximum time to wait for index query results to become non-stale before exception is thrown. Default: 15 seconds.</param>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.GetIndexQuery">
-            <summary>
-                Create the index query object for this query
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AddParameter(System.String,System.Object)">
-            <summary>
-            Add a named parameter to the query
+            It adds additional shard context to a query so it will be executed only on the relevant shards
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Session.IFilterDocumentQueryBase`2.Not">
@@ -9075,12 +9020,12 @@
         </member>
         <member name="M:Raven.Client.Documents.Session.IDocumentQueryBase`2.Proximity(System.Int32)">
             <summary>
-                Specifies a proximity distance for the phrase in the last where clause
+                Specifies a proximity distance for the phrase in the last search clause
             </summary>
-            <param name="proximity">number of words within</param>
+            <param name="proximity">Number of terms between the search terms</param>
             <returns></returns>
             <remarks>
-                http://lucene.apache.org/java/2_4_0/queryparsersyntax.html#Proximity%20Searches
+                https://lucene.apache.org/core/2_9_4/queryparsersyntax.html#Proximity%20Searches
             </remarks>
         </member>
         <member name="M:Raven.Client.Documents.Session.IDocumentQueryBase`2.RandomOrdering">
@@ -9273,6 +9218,11 @@
               This shouldn't be used outside of unit tests unless you are well aware of the implications
             </summary>
             <param name = "waitTimeout">Maximum time to wait for index query results to become non-stale before exception is thrown. Default: 15 seconds.</param>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IDocumentQueryCustomization.ShardContext(System.Action{Raven.Client.Documents.Session.Querying.Sharding.IQueryShardedContextBuilder})">
+            <summary>
+            It adds additional shard context to a query so it will be executed only on the relevant shards
+            </summary>
         </member>
         <member name="T:Raven.Client.Documents.Session.IDocumentSession">
             <summary>
@@ -9737,6 +9687,92 @@
         <member name="T:Raven.Client.Documents.Session.InMemoryDocumentSessionOperations.SaveChangesData">
             <summary>
             Data for a batch command to the server
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IPagingDocumentQueryBase`2.Skip(System.Int64)">
+            <summary>
+                Skips the specified count.
+            </summary>
+            <param name="count">Number of items to skip.</param>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IPagingDocumentQueryBase`2.Take(System.Int64)">
+            <summary>
+                Takes the specified count.
+            </summary>
+            <param name="count">Maximum number of items to take.</param>
+        </member>
+        <member name="P:Raven.Client.Documents.Session.IQueryBase`2.Conventions">
+            <summary>
+                Gets the document convention from the query session
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AfterQueryExecuted(System.Action{Raven.Client.Documents.Queries.QueryResult})">
+            <summary>
+                Callback to get the results of the query
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AfterStreamExecuted(System.Action{Sparrow.Json.BlittableJsonReaderObject})">
+            <summary>
+                Callback to get the results of the stream
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.BeforeQueryExecuted(System.Action{Raven.Client.Documents.Queries.IndexQuery})">
+            <summary>
+                Allows you to modify the index query before it is sent to the server
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.InvokeAfterQueryExecuted(Raven.Client.Documents.Queries.QueryResult)">
+            <summary>
+                Called externally to raise the after query executed callback
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.InvokeAfterStreamExecuted(Sparrow.Json.BlittableJsonReaderObject)">
+            <summary>
+                Called externally to raise the after query executed callback
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.NoCaching">
+            <summary>
+                Disables caching for query results.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.NoTracking">
+            <summary>
+                Disables tracking for queried entities by Raven's Unit of Work.
+                Usage of this option will prevent holding query results in memory.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Timings(Raven.Client.Documents.Queries.Timings.QueryTimings@)">
+            <summary>
+                Enables calculation of timings for various parts of a query (Lucene search, loading documents, transforming
+                results). Default: false
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.Statistics(Raven.Client.Documents.Session.QueryStatistics@)">
+            <summary>
+                Provide statistics about the query, such as total count of matching records
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.UsingDefaultOperator(Raven.Client.Documents.Queries.QueryOperator)">
+            <summary>
+                Select the default operator to use for this query
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.WaitForNonStaleResults(System.Nullable{System.TimeSpan})">
+            <summary>
+              Instruct the query to wait for non stale results.
+              This shouldn't be used outside of unit tests unless you are well aware of the implications
+            </summary>
+            <param name = "waitTimeout">Maximum time to wait for index query results to become non-stale before exception is thrown. Default: 15 seconds.</param>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.GetIndexQuery">
+            <summary>
+                Create the index query object for this query
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.IQueryBase`2.AddParameter(System.String,System.Object)">
+            <summary>
+            Add a named parameter to the query
             </summary>
         </member>
         <member name="T:Raven.Client.Documents.Session.IRavenQueryInspector">
@@ -10836,11 +10872,6 @@
             What was the total count of the results that matched the query
             </summary>
         </member>
-        <member name="P:Raven.Client.Documents.Session.QueryStatistics.LongTotalResults">
-            <summary>
-            What was the total count of the results that matched the query as int64
-            </summary>
-        </member>
         <member name="P:Raven.Client.Documents.Session.QueryStatistics.SkippedResults">
             <summary>
             The number of results skipped by the server.
@@ -10889,6 +10920,22 @@
             Abstract implementation for in memory session operations
             </summary>
         </member>
+        <member name="F:Raven.Client.Documents.Session.ShardedBatchBehavior.Default">
+            <summary>
+            Do not force any behavior from the Client API and rely on Server's default
+            </summary>
+        </member>
+        <member name="F:Raven.Client.Documents.Session.ShardedBatchBehavior.TransactionalSingleBucketOnly">
+            <summary>
+            Allow to perform batch commands only on a single bucket, commands will be performed on single shard with ACID transaction guarantees.
+            A transaction that contains changes that belong to multiple buckets will be rejected by the server.
+            </summary>
+        </member>
+        <member name="F:Raven.Client.Documents.Session.ShardedBatchBehavior.NonTransactionalMultiBucket">
+            <summary>
+            Allow to spread batch commands to multiple buckets, commands can be performed on multiple shards without ACID transaction guarantees
+            </summary>
+        </member>
         <member name="P:Raven.Client.Documents.Session.SessionOptions.TransactionMode">
             <summary>
             Once TransactionMode set 'ClusterWide' it  will perform the SaveChanges as a transactional cluster wide operation.
@@ -10934,6 +10981,12 @@
         <member name="P:Raven.Client.Documents.Session.WhereParams.IsNestedPath">
             <summary>
             Is this a root property or not?
+            </summary>
+        </member>
+        <member name="E:Raven.Client.Documents.Subscriptions.AbstractSubscriptionWorker`2.AfterAcknowledgment">
+            <summary>
+            Allows the user to define stuff that happens after the confirm was received from the server
+            (this way we know we won't get those documents again)
             </summary>
         </member>
         <member name="M:Raven.Client.Documents.Subscriptions.DocumentSubscriptions.Create``1(Raven.Client.Documents.Subscriptions.SubscriptionCreationOptions{``0},System.String)">
@@ -11085,7 +11138,7 @@
             Update a data subscription in a database.
             </summary>
         </member>
-        <member name="T:Raven.Client.Documents.Subscriptions.SubscriptionBatch`1.Item">
+        <member name="T:Raven.Client.Documents.Subscriptions.SubscriptionBatchBase`1.Item">
             <summary>
             Represents a single item in a subscription batch results. This class should be used only inside the subscription's Run delegate, using it outside this scope might cause unexpected behavior.
             </summary>
@@ -11115,7 +11168,7 @@
             to complete and keep attempting to gain the subscription
             </summary>
         </member>
-        <member name="E:Raven.Client.Documents.Subscriptions.SubscriptionWorker`1.AfterAcknowledgment">
+        <member name="M:Raven.Client.Documents.Subscriptions.SubscriptionWorker`1.#ctor(Raven.Client.Documents.Subscriptions.SubscriptionWorkerOptions,Raven.Client.Documents.DocumentStore,System.String)">
             <summary>
             Allows the user to define stuff that happens after the confirm was received from the server
             (this way we know we won't get those documents again)
@@ -11407,16 +11460,6 @@
             <param name="message">The message.</param>
             <param name="inner">The inner.</param>
         </member>
-        <member name="P:Raven.Client.Exceptions.ConcurrencyException.ExpectedETag">
-            <summary>
-            Expected Etag.
-            </summary>
-        </member>
-        <member name="P:Raven.Client.Exceptions.ConcurrencyException.ActualETag">
-            <summary>
-            Actual Etag.
-            </summary>
-        </member>
         <member name="P:Raven.Client.Exceptions.ConcurrencyException.ExpectedChangeVector">
             <summary>
             Expected Change Vector.
@@ -11456,66 +11499,20 @@
             <param name="message">The message.</param>
             <param name="inner">The inner.</param>
         </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException.#ctor">
+        <member name="M:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException"/> class.
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException"/> class.
             </summary>
         </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException.#ctor(System.String)">
+        <member name="M:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException"/> class.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.AttachmentDoesNotExistException"/> class.
-            </summary>
-            <param name="message">The message.</param>
-            <param name="inner">The inner.</param>
-        </member>
-        <member name="T:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException">
-            <summary>
-            This exception is raised if creation of index is attempted when there is already an index with identical name
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException"/> class.
             </summary>
             <param name="message">The message.</param>
         </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor(System.String,System.Exception)">
+        <member name="M:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException.#ctor(System.String,System.Exception)">
             <summary>
-            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
-            </summary>
-            <param name="message">The message.</param>
-            <param name="inner">The inner.</param>
-        </member>
-        <member name="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException">
-            <summary>
-            This exception is raised when a query is made against a non existing index
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
-            </summary>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Attachments.AttachmentDoesNotExistException"/> class.
             </summary>
             <param name="message">The message.</param>
             <param name="inner">The inner.</param>
@@ -11572,6 +11569,52 @@
             <summary>
             Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.DocumentDoesNotExistException"/> class.
             </summary>
+        </member>
+        <member name="T:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException">
+            <summary>
+            This exception is raised if creation of index is attempted when there is already an index with identical name
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexAlreadyExistException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="!:IndexOrTransformerAlreadyExistException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException">
+            <summary>
+            This exception is raised when a query is made against a non existing index
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Raven.Client.Exceptions.Documents.Indexes.IndexDoesNotExistException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
         </member>
         <member name="T:Raven.Client.Exceptions.Documents.Session.NonUniqueObjectException">
             <summary>
@@ -11653,7 +11696,7 @@
              Extensions for Linq expressions
             </summary>
         </member>
-        <member name="M:Raven.Client.Extensions.ExpressionExtensions.ToPropertyPath(System.Linq.Expressions.LambdaExpression,System.Char,System.String)">
+        <member name="M:Raven.Client.Extensions.ExpressionExtensions.ToPropertyPath(System.Linq.Expressions.LambdaExpression,Raven.Client.Documents.Conventions.DocumentConventions,System.Char,System.String)">
             <summary>
              Turn an expression like x=&lt; x.User.Name to "User.Name"
             </summary>
@@ -12169,6 +12212,12 @@
         <member name="P:Raven.Client.Util.IDisposalNotification.WasDisposed">
             <summary>
             Whether the instance has been disposed
+            </summary>
+        </member>
+        <member name="T:Raven.Client.Util.CustomMemberInitAsJson">
+            <summary>
+            Obeys parenthesis better.
+            The default MememberInitAsJson incorrectly produces var func = a => { Name: a.Name }; without parenthesis around object expression
             </summary>
         </member>
         <member name="T:Raven.Client.Util.Metrics.AtomicLong">
