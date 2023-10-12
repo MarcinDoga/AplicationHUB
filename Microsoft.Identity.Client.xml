@@ -94,7 +94,7 @@
             </summary>
         </member>
         <member name="T:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1">
-            <inheritdoc />
+            <inheritdoc/>
             <typeparam name="T"></typeparam>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractAcquireTokenParameterBuilder`1.#ctor">
@@ -297,7 +297,7 @@
             <typeparam name="T"></typeparam>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractClientAppBaseAcquireTokenParameterBuilder`1.ExecuteAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AbstractConfidentialClientAcquireTokenParameterBuilder`1">
             <summary>
@@ -306,7 +306,7 @@
             <typeparam name="T"></typeparam>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractConfidentialClientAcquireTokenParameterBuilder`1.ExecuteAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractConfidentialClientAcquireTokenParameterBuilder`1.Validate">
             <summary>
@@ -343,7 +343,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractManagedIdentityAcquireTokenParameterBuilder`1.ExecuteAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AbstractPublicClientAcquireTokenParameterBuilder`1">
             <summary>
@@ -352,7 +352,7 @@
             <typeparam name="T"></typeparam>
         </member>
         <member name="M:Microsoft.Identity.Client.AbstractPublicClientAcquireTokenParameterBuilder`1.ExecuteAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.AbstractPublicClientAcquireTokenParameterBuilder`1.PublicClientApplicationExecutor">
             <summary>
@@ -364,13 +364,13 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByAuthorizationCodeParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByAuthorizationCodeParameterBuilder.Validate">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByAuthorizationCodeParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByAuthorizationCodeParameterBuilder.WithSendX5C(System.Boolean)">
             <summary>
@@ -427,7 +427,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IPublicClientApplicationExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.WithUsername(System.String)">
             <summary>
@@ -447,7 +447,7 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByIntegratedWindowsAuthParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder">
             <summary>
@@ -456,16 +456,16 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IClientApplicationBaseExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder.Validate">
             <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByRefreshTokenParameterBuilder.WithSendX5C(System.Boolean)">
             <summary>
@@ -517,10 +517,10 @@
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByUsernamePasswordParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenByUsernamePasswordParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder">
             <summary>
@@ -529,7 +529,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IConfidentialClientApplicationExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder.WithForceRefresh(System.Boolean)">
             <summary>
@@ -566,13 +566,13 @@
             </summary>        
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder.Validate">
             <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForClientParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder">
             <summary>
@@ -581,7 +581,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IManagedIdentityApplicationExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder.WithForceRefresh(System.Boolean)">
             <summary>
@@ -594,10 +594,10 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder">
             <summary>
@@ -710,10 +710,10 @@
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.Validate">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenInteractiveParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder">
             <summary>
@@ -722,7 +722,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IConfidentialClientApplicationExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder.WithCacheKey(System.String)">
             <summary>
@@ -778,16 +778,16 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder.Validate">
             <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenOnBehalfOfParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.AcquireTokenSilentParameterBuilder">
-            <inheritdoc />
+            <inheritdoc/>
             <summary>
             Parameter builder for the <see cref="M:Microsoft.Identity.Client.IClientApplicationBase.AcquireTokenSilent(System.Collections.Generic.IEnumerable{System.String},Microsoft.Identity.Client.IAccount)"/>
             operation. See https://aka.ms/msal-net-acquiretokensilent
@@ -818,13 +818,13 @@
             avoid negatively affecting the performance of your application</remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenSilentParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenSilentParameterBuilder.Validate">
             <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenSilentParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenSilentParameterBuilder.WithSendX5C(System.Boolean)">
             <summary>
@@ -886,7 +886,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenWithDeviceCodeParameterBuilder.#ctor(Microsoft.Identity.Client.ApiConfig.Executors.IPublicClientApplicationExecutor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenWithDeviceCodeParameterBuilder.WithDeviceCodeResultCallback(System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})">
             <summary>
@@ -898,10 +898,10 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenWithDeviceCodeParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenWithDeviceCodeParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.AcquireTokenWithDeviceCodeParameterBuilder.Validate">
             <summary>
@@ -1058,17 +1058,17 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenByIntegratedWindowsAuthParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenByUsernamePasswordParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenForClientParameters.ForceRefresh">
             <summary>
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenForClientParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenInteractiveParameters.ExtraScopesToConsent">
             <summary>
@@ -1095,16 +1095,16 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenOnBehalfOfParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenSilentParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.AcquireTokenWithDeviceCodeParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ApiConfig.Parameters.GetAuthorizationRequestUrlParameters.LogParameters(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.GetAuthorizationRequestUrlParameterBuilder">
             <summary>
@@ -1167,7 +1167,7 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.GetAuthorizationRequestUrlParameterBuilder.ExecuteInternalAsync(System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.GetAuthorizationRequestUrlParameterBuilder.ExecuteAsync(System.Threading.CancellationToken)">
             <summary>
@@ -1183,7 +1183,7 @@
             <returns></returns>
         </member>
         <member name="M:Microsoft.Identity.Client.GetAuthorizationRequestUrlParameterBuilder.CalculateApiEventId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.SystemWebViewOptions">
             <summary>
@@ -2081,7 +2081,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.#ctor(Microsoft.Identity.Client.ApplicationConfiguration)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.CreateWithApplicationOptions(Microsoft.Identity.Client.ConfidentialClientApplicationOptions)">
             <summary>
@@ -2222,12 +2222,12 @@
             <summary>
             When set to <c>true</c>, MSAL will lock cache access at the <see cref="T:Microsoft.Identity.Client.ConfidentialClientApplication"/> level, i.e.
             the block of code between BeforeAccessAsync and AfterAccessAsync callbacks will be synchronized. 
-            Apps can set this flag to <c>false</c> to enable an optimistic cache locking strategy, which may result in better performance, especially 
-            when ConfidentialClientApplication objects are reused.
+            Apps can set this flag to <c>false</c> to enable an optimistic cache locking strategy, which may result in better performance
+            at the cost of cache consistency. 
+            Setting this flag to <c>false</c> is only recommended for apps which create a new <see cref="T:Microsoft.Identity.Client.ConfidentialClientApplication"/> per request.
             </summary>
             <remarks>
-            False by default.
-            Not recommended for apps that call RemoveAsync
+            This flag is <c>true</c> by default. The default behavior is recommended.
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.WithGenericAuthority(System.String)">
@@ -2249,7 +2249,7 @@
             <returns>The builder to chain the .With methods</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.Validate">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplicationBuilder.Build">
             <summary>
@@ -2297,12 +2297,12 @@
             <summary>
             When set to <c>true</c>, MSAL will lock cache access at the <see cref="T:Microsoft.Identity.Client.ConfidentialClientApplication"/> level, i.e.
             the block of code between BeforeAccessAsync and AfterAccessAsync callbacks will be synchronized. 
-            Apps can set this flag to <c>false</c> to enable an optimistic cache locking strategy, which may result in better performance, especially 
-            when ConfidentialClientApplication objects are reused.
+            Apps can set this flag to <c>false</c> to enable an optimistic cache locking strategy, which may result in better performance
+            at the cost of cache consistency. 
+            Setting this flag to <c>false</c> is only recommended for apps which create a new <see cref="T:Microsoft.Identity.Client.ConfidentialClientApplication"/> per request.
             </summary>
             <remarks>
-            False by default.
-            Not recommended for apps that call RemoveAsync
+            This flag is <c>true</c> by default. The default behavior is recommended.
             </remarks>
         </member>
         <member name="T:Microsoft.Identity.Client.IAppConfig">
@@ -2528,7 +2528,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.ManagedIdentityApplicationBuilder.#ctor(Microsoft.Identity.Client.ApplicationConfiguration)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ManagedIdentityApplicationBuilder.Create(Microsoft.Identity.Client.AppConfig.ManagedIdentityId)">
             <summary>
@@ -2687,7 +2687,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplicationBuilder.#ctor(Microsoft.Identity.Client.ApplicationConfiguration)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplicationBuilder.CreateWithApplicationOptions(Microsoft.Identity.Client.PublicClientApplicationOptions)">
             <summary>
@@ -2842,7 +2842,7 @@
             <returns></returns>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplicationBuilder.Validate">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.PublicClientApplicationOptions">
             <summary>
@@ -2887,7 +2887,7 @@
             <remarks>This API is experimental and it may change in future versions of the library without an major version increment</remarks>
         </member>
         <member name="T:Microsoft.Identity.Client.ApplicationBase">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="F:Microsoft.Identity.Client.ApplicationBase.DefaultAuthority">
             <summary>
@@ -3226,6 +3226,16 @@
             <summary>
             Contains the Outcome of the region discovery if Region was used.
             </summary>
+        </member>
+        <member name="P:Microsoft.Identity.Client.AuthenticationResultMetadata.Telemetry">
+            <summary>
+            May contain telemetry data. 
+            </summary>
+            <remarks>
+            Currently it is emitted only for desktop public client flows when the broker is used and it is 
+            also included in the verbose logs. May contain Personal Identifiable Information (PII), as per the logging settings. 
+            See https://aka.ms/msal-net-logging for more details about logging.
+            </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.AuthScheme.AuthSchemeHelper.StoreTokenTypeInCacheKey(System.String)">
             <summary>
@@ -3844,15 +3854,8 @@
             </summary>
         </member>
         <member name="T:Microsoft.Identity.Client.ClientApplicationBase">
-            <summary>
-            Abstract class containing common API methods and properties. Both <see cref="T:Microsoft.Identity.Client.PublicClientApplication"/> and 
-            ConfidentialClientApplication
-            extend this class. For details see https://aka.ms/msal-net-client-applications
-            </summary>
-            <summary>
-            Abstract class containing common API methods and properties. Both <see cref="T:PublicClientApplication"/> and <see cref="T:ConfidentialClientApplication"/>
-            extend this class. For details see https://aka.ms/msal-net-client-applications
-            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.ClientApplicationBase.AppConfig">
             <summary>
@@ -4165,10 +4168,10 @@
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplication.InitiateLongRunningProcessInWebApi(System.Collections.Generic.IEnumerable{System.String},System.String,System.String@)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplication.AcquireTokenInLongRunningProcess(System.Collections.Generic.IEnumerable{System.String},System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.ConfidentialClientApplication.StopLongRunningProcessInWebApiAsync(System.String,System.Threading.CancellationToken)">
             <summary>
@@ -4875,8 +4878,7 @@
         </member>
         <member name="T:Microsoft.Identity.Client.IApplicationBase">
             <summary>
-            Abstract class containing common API methods and properties. <see cref="T:ManagedIdentityApplication"/>
-            extend this class. For details see https://aka.ms/msal-net-client-applications.
+            Interface used for creation of client applications. For details see https://aka.ms/msal-net-client-applications.
             </summary>
         </member>
         <member name="T:Microsoft.Identity.Client.IByRefreshToken">
@@ -4910,10 +4912,7 @@
             <param name="refreshToken">The refresh token from ADAL 2.x</param>
         </member>
         <member name="T:Microsoft.Identity.Client.IClientApplicationBase">
-            <summary>
-            Abstract class containing common API methods and properties. Both <see cref="T:PublicClientApplication"/> and <see cref="T:ConfidentialClientApplication"/>
-            extend this class. For details see https://aka.ms/msal-net-client-applications.
-            </summary>
+            <inheritdoc/>
             <summary>
             Interface defining common API methods and properties. Both <see cref="T:PublicClientApplication"/> and <see cref="T:ConfidentialClientApplication"/>
             extend this class. For details see https://aka.ms/msal-net-client-applications
@@ -5335,6 +5334,16 @@
             <see cref="M:Microsoft.Identity.Client.AcquireTokenForManagedIdentityParameterBuilder.WithForceRefresh(System.Boolean)"/>
             </remarks>
         </member>
+        <member name="M:Microsoft.Identity.Client.Instance.AdfsAuthority.GetTenantedAuthority(System.String,System.Boolean)">
+            <summary>
+            ADFS seems to support tenanted authorities, but the tenant ID is fixed so for all intents and purposes 
+            it remains constant
+            </summary>
+            <param name="tenantId"></param>
+            <param name="forceSpecifiedTenant"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="T:Microsoft.Identity.Client.Instance.Authority">
             <remarks>
             Must be kept immutable
@@ -5413,7 +5422,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.Instance.Validation.NullAuthorityValidator.ValidateAuthorityAsync(Microsoft.Identity.Client.AuthorityInfo)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Region.IRegionManager.GetAzureRegionAsync(Microsoft.Identity.Client.Internal.RequestContext)">
             <summary>
@@ -5693,16 +5702,16 @@
             </summary>
         </member>
         <member name="P:Microsoft.Identity.Client.Internal.ServiceBundle.HttpManager">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.Internal.ServiceBundle.WsTrustWebRequestManager">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.Internal.ServiceBundle.PlatformProxy">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.Internal.ServiceBundle.Config">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Core.ILoggerAdapter.IsLoggingEnabled(Microsoft.Identity.Client.LogLevel)">
             <summary>
@@ -5766,7 +5775,7 @@
         </member>
         <member name="T:Microsoft.Identity.Client.IPublicClientApplication">
             <summary>
-            Class used to acquire tokens in desktop and mobile applications. Public client applications are not trusted to safely keep application secrets and therefore they can only access web APIs in the name of the authenticating user.
+            Component used to acquire tokens in desktop and mobile applications. Public client applications are not trusted to safely keep application secrets and therefore they can only access web APIs in the name of the authenticating user.
             For more details on differences between public and confidential clients, refer to <see href="https://aka.ms/msal-net-client-applications">our documentation</see>.
             </summary>
             <remarks>
@@ -5778,10 +5787,6 @@
             on the authentication strategy (e.g., through the <see href="https://learn.microsoft.com/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam?view=msal-dotnet-latest">Web Account Manager</see>, the Authenticator app, web browser, etc.), different redirect URIs will be used by MSAL. Redirect URIs must always be configured for the application in the Azure Portal.
             </para>
             </remarks>
-            <summary>
-            Interface defining common API methods and properties.
-            For details see https://aka.ms/msal-net-client-applications
-            </summary>
         </member>
         <member name="P:Microsoft.Identity.Client.IPublicClientApplication.IsSystemWebViewAvailable">
             <summary>
@@ -6561,7 +6566,7 @@
             <param name="errorMessage">Error message to be set.</param>
         </member>
         <member name="M:Microsoft.Identity.Client.Kerberos.KerberosSupplementalTicket.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.Kerberos.KerberosSupplementalTicketManager">
             <summary>
@@ -6713,7 +6718,7 @@
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.ManagedIdentityApplication.AcquireTokenForManagedIdentity(System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.ManagedIdentity.AbstractManagedIdentity">
             <summary>
@@ -7021,10 +7026,6 @@
             </summary>
         </member>
         <member name="T:Microsoft.Identity.Client.PublicClientApplication">
-            <summary>
-            Abstract class containing common API methods and properties.
-            For details see https://aka.ms/msal-net-client-applications
-            </summary>
             <inheritdoc cref="T:Microsoft.Identity.Client.IPublicClientApplication"/>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.#ctor(System.String)">
@@ -7369,6 +7370,9 @@
             Currently only the Windows broker is able to login with the current operating system user. For additional details, see <see href="https://aka.ms/msal-net-wam">the documentation on the Windows broker</see>.
             </remarks>
         </member>
+        <member name="P:Microsoft.Identity.Client.PublicClientApplication.IsSystemWebViewAvailable">
+            <inheritdoc/>
+        </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsEmbeddedWebViewAvailable">
             <summary>
             Returns <c>true</c> if MSAL can use an embedded web view (web browser).
@@ -7399,6 +7403,24 @@
             <item><description>In mobile apps, the device must be Intune joined and Authenticator or Company Portal must be installed. See https://aka.ms/msal-brokers </description></item>
             </list>
             </remarks>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenInteractive(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenWithDeviceCode(System.Collections.Generic.IEnumerable{System.String},System.Func{Microsoft.Identity.Client.DeviceCodeResult,System.Threading.Tasks.Task})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.Microsoft#Identity#Client#IByRefreshToken#AcquireTokenByRefreshToken(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByIntegratedWindowsAuth(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.Security.SecureString)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Identity.Client.PublicClientApplication.AcquireTokenByUsernamePassword(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PublicClientApplication.IsProofOfPossessionSupportedByClient">
             <summary>
@@ -7708,7 +7730,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.TokenCache.SetIosKeychainSecurityGroup(System.String)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.TokenCache.DeleteAccessTokensWithIntersectingScopes(Microsoft.Identity.Client.Internal.Requests.AuthenticationRequestParameters,System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.HashSet{System.String},System.String,System.String)">
             <summary>
@@ -8936,6 +8958,11 @@
             An <see cref="P:Microsoft.Identity.Client.MsalException.AdditionalExceptionData"/> property key, available when using desktop brokers.
             </summary>
         </member>
+        <member name="F:Microsoft.Identity.Client.MsalException.BrokerTelemetry">
+            <summary>
+            An <see cref="P:Microsoft.Identity.Client.MsalException.AdditionalExceptionData"/> property key, available when using desktop brokers.
+            </summary>
+        </member>
         <member name="P:Microsoft.Identity.Client.MsalException.IsRetryable">
             <summary>
             Indicates if the previous operation that resulted in this exception should be retried.
@@ -9584,46 +9611,46 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetWebUiFactory(Microsoft.Identity.Client.ApplicationConfiguration)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetDeviceModel">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetOperatingSystem">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetProcessorArchitecture">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetUserPrincipalNameAsync">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetCallingApplicationName">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetCallingApplicationVersion">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetDeviceId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetDefaultRedirectUri(System.String,System.Boolean)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetProductName">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.GetRuntimeVersion">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.CreateLegacyCachePersistence">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.CryptographyManager">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.PlatformLogger">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:Microsoft.Identity.Client.PlatformsCommon.Shared.AbstractPlatformProxy.LegacyCacheRequiresSerialization">
             <summary>
@@ -10256,10 +10283,10 @@
             </remarks>
         </member>
         <member name="M:Microsoft.Identity.Client.UI.CustomWebUiHandler.AcquireAuthorizationAsync(System.Uri,System.Uri,Microsoft.Identity.Client.Internal.RequestContext,System.Threading.CancellationToken)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.UI.CustomWebUiHandler.UpdateRedirectUri(System.Uri)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.UI.EmbeddedUiCommon.IsAllowedIeOrEdgeAuthorizationRedirect(System.Uri)">
             <summary>
@@ -11092,7 +11119,7 @@
                 Valid key sizes range from 384 to 16384 bits, in increments of 8. It's suggested that a
                 minimum size of 2048 bits be used for all keys.
             </summary>
-            <param name="keySize">size of hte key to generate, in bits</param>
+            <param name="keySize">size of the key to generate, in bits</param>
             <exception cref="T:System.Security.Cryptography.CryptographicException">if <paramref name="keySize" /> is not valid</exception>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.Native.RSACng.#ctor(System.Security.Cryptography.CngKey)">
@@ -11385,7 +11412,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.#ctor(Microsoft.Identity.Client.Core.ILoggerAdapter)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.GetUserPrincipalNameAsync">
             <summary>
@@ -11394,37 +11421,37 @@
             <returns>Upn or throws</returns>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.GetDefaultRedirectUri(System.String,System.Boolean)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.CreateLegacyCachePersistence">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.CreateWebUiFactory">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetDeviceModel">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetOperatingSystem">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetProcessorArchitecture">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetCallingApplicationName">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetCallingApplicationVersion">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetDeviceId">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetProductName">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy.InternalGetCryptographyManager">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.Platforms.Shared.Desktop.OsBrowser.IUriInterceptor">
             <summary>
@@ -11819,7 +11846,7 @@
             </summary>
         </member>
         <member name="M:Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos.TicketCacheWriter.Dispose">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:Microsoft.Identity.Client.Platforms.Features.DesktopOs.StaTaskScheduler">
             <summary>Provides a scheduler that uses STA threads.</summary>
