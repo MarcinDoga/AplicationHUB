@@ -13976,6 +13976,14 @@
             See the <a href="https://docs.github.com/en/rest/reference/actions">Deployments API documentation</a> for more details
             </remarks>
         </member>
+        <member name="P:Octokit.IRepositoryActionsClient.Variables">
+            <summary>
+            Client for GitHub's Repository Actions API
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/reference/actions">Deployments API documentation</a> for more details
+            </remarks>
+        </member>
         <member name="T:Octokit.IRepositoryBranchesClient">
             <summary>
             A client for GitHub's Repository Branches API.
@@ -16013,6 +16021,89 @@
             <remarks>https://developer.github.com/v3/repos/traffic/#clones</remarks>
             <param name="repositoryId">The owner of the repository</param>
             <param name="per">Breakdown per day or week</param>
+        </member>
+        <member name="T:Octokit.IRepositoryVariablesClient">
+            <summary>
+            A client for GitHub's Repository Variables API.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28">Repository Variables API documentation</a> for more details.
+            </remarks>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.GetAllOrganization(System.String,System.String)">
+            <summary>
+            List the organization variables for a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#list-repository-organization-variables">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariablesCollection"/> instance for the list of repository variables.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.GetAll(System.String,System.String)">
+            <summary>
+            List the variables for a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#list-repository-variables">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariablesCollection"/> instance for the list of repository variables.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.Get(System.String,System.String,System.String)">
+            <summary>
+            Get a variable from a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#get-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variableName">The name of the variable</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository secret.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.Create(System.String,System.String,Octokit.Variable)">
+            <summary>
+            Create a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#create-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="newVariable">The variable to create</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository variable that was created.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.Update(System.String,System.String,Octokit.Variable)">
+            <summary>
+            Update a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#update-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variable">The variable to update</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository variable that was updated.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoryVariablesClient.Delete(System.String,System.String,System.String)">
+            <summary>
+            Delete a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#delete-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variableName">The name of the variable</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
         </member>
         <member name="T:Octokit.ISearchClient">
             <summary>
@@ -23314,6 +23405,14 @@
             See the <a href="https://docs.github.com/v3/actions#secrets">Deployments API documentation</a> for more details
             </remarks>
         </member>
+        <member name="P:Octokit.RepositoryActionsClient.Variables">
+            <summary>
+            Client for GitHub's Repository Actions API
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/free-pro-team@latest/rest/actions/variables?apiVersion=2022-11-28">Deployments API documentation</a> for more details
+            </remarks>
+        </member>
         <member name="T:Octokit.RepositoryBranchesClient">
             <summary>
             A client for GitHub's Repository Branches API.
@@ -25316,6 +25415,87 @@
             <param name="owner">The owner of the repository</param>
             <param name="name">The name of the repository</param>
             <param name="per">Breakdown per day or week</param>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.#ctor(Octokit.IApiConnection)">
+            <summary>
+            Initializes a new GitHub Repository Branches API client.
+            </summary>
+            <param name="apiConnection">An API connection</param>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.GetAllOrganization(System.String,System.String)">
+            <summary>
+            List the organization variables for a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#list-repository-organization-variables">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariablesCollection"/> instance for the list of repository variables.</returns>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.GetAll(System.String,System.String)">
+            <summary>
+            List the variables for a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#list-repository-variables">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariablesCollection"/> instance for the list of repository variables.</returns>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.Get(System.String,System.String,System.String)">
+            <summary>
+            Get a variable from a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#get-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variableName">The name of the variable</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository secret.</returns>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.Create(System.String,System.String,Octokit.Variable)">
+            <summary>
+            Create a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#create-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="newVariable">The variable to create</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository variable that was created.</returns>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.Update(System.String,System.String,Octokit.Variable)">
+            <summary>
+            Update a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#update-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variable">The variable to update</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.RepositoryVariable"/> instance for the repository variable that was updated.</returns>
+        </member>
+        <member name="M:Octokit.RepositoryVariablesClient.Delete(System.String,System.String,System.String)">
+            <summary>
+            Delete a variable in a repository.
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#delete-a-repository-variable">API documentation</a> for more information.
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repoName">The name of the repository</param>
+            <param name="variableName">The name of the variable</param>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
         </member>
         <member name="T:Octokit.SearchClient">
             <summary>
@@ -31182,6 +31362,31 @@
             <param name="owner">The owner of the repo</param>
             <param name="repo">The name of the repo</param>
             <returns>The <see cref="T:System.Uri"/> that handles the repository secrets for the repository</returns>
+        </member>
+        <member name="M:Octokit.ApiUrls.RepositoryVariable(System.String,System.String,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> that handles the repository variables for the repository
+            </summary>
+            <param name="owner">The owner of the repo</param>
+            <param name="repo">The name of the repo</param>
+            <param name="variable">The name of the variable</param>
+            <returns>The <see cref="T:System.Uri"/> that handles the repository variables for the repository</returns>
+        </member>
+        <member name="M:Octokit.ApiUrls.RepositoryVariables(System.String,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> that handles the repository variables for the repository
+            </summary>
+            <param name="owner">The owner of the repo</param>
+            <param name="repo">The name of the repo</param>
+            <returns>The <see cref="T:System.Uri"/> that handles the repository variables for the repository</returns>
+        </member>
+        <member name="M:Octokit.ApiUrls.RepositoryOrganizationVariables(System.String,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> that handles the organization variables for the repository
+            </summary>
+            <param name="owner">The owner of the repo</param>
+            <param name="repo">The name of the repo</param>
+            <returns>The <see cref="T:System.Uri"/> that handles the organization variables for the repository</returns>
         </member>
         <member name="M:Octokit.ApiUrls.Emojis">
             <summary>
@@ -40193,6 +40398,23 @@
             Tells if this user is currently hireable.
             </summary>
         </member>
+        <member name="M:Octokit.Variable.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Octokit.Variable"/> class.
+            </summary>
+            <param name="name">The name of the variable.</param>
+            <param name="value">The value of the variable.</param>
+        </member>
+        <member name="P:Octokit.Variable.Name">
+            <summary>
+            Required. Gets or sets the name of the variable.
+            </summary>
+        </member>
+        <member name="P:Octokit.Variable.Value">
+            <summary>
+            Required. Gets or sets the value of the variable.
+            </summary>
+        </member>
         <member name="T:Octokit.WorkflowRunJobsRequest">
             <summary>
             Details to filter a workflow run jobs request, such as by the latest attempt.
@@ -44957,6 +45179,46 @@
         <member name="P:Octokit.RepositoryTag.NodeId">
             <summary>
             GraphQL Node Id
+            </summary>
+        </member>
+        <member name="T:Octokit.RepositoryVariable">
+            <summary>
+            Represents a repository variable.
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariable.Name">
+            <summary>
+            The name of the repository variable
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariable.Value">
+            <summary>
+            The value of the repository variable
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariable.CreatedAt">
+            <summary>
+            The date and time that the variable was created
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariable.UpdatedAt">
+            <summary>
+            The date and time the variable was last updated
+            </summary>
+        </member>
+        <member name="T:Octokit.RepositoryVariablesCollection">
+            <summary>
+            Represents response of variables for a repository.
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariablesCollection.TotalCount">
+            <summary>
+            The total count of variables for the repository
+            </summary>
+        </member>
+        <member name="P:Octokit.RepositoryVariablesCollection.Variables">
+            <summary>
+            The list of variables for the repository
             </summary>
         </member>
         <member name="T:Octokit.RequestedReviews">

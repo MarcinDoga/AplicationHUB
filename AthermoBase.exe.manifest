@@ -4,7 +4,7 @@
   <description asmv2:iconFile="small.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="AthermoBase" version="1.2.6.2" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="AthermoBase" version="1.2.7.0" language="neutral" processorArchitecture="amd64" />
     <commandLine file="AthermoBase.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1411128">
-      <assemblyIdentity name="AthermoBase" version="1.2.6.2" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AthermoBase.exe" size="1691704">
+      <assemblyIdentity name="AthermoBase" version="1.2.7.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZfDj33zeWJJFmEhLm/IEWlx/EnK6Axov71hkMX5yeVA=</dsig:DigestValue>
+        <dsig:DigestValue>ejs3z8FkHEPrycabblPqhwmNx1kEeOTlB/nJFC2Y4M0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -427,14 +427,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Octokit.dll" size="1306112">
-      <assemblyIdentity name="Octokit" version="8.0.1.0" publicKeyToken="0BE8860AEE462442" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Octokit.dll" size="1313792">
+      <assemblyIdentity name="Octokit" version="8.1.1.0" publicKeyToken="0BE8860AEE462442" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IJHs8WlDAz0VTW2SquD+ia1mdh0ncNSVTNyQgh1u6MY=</dsig:DigestValue>
+        <dsig:DigestValue>1yeVFKxJxR+ueDh84KqIEzR9TH8RurISkDuJUf8MqLE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -615,6 +615,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>T4H/0NxyBNt1r8NepCkXabB8RAWS8oiUJg7qdmJqI8Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TagLibSharp.dll" size="500224">
+      <assemblyIdentity name="TagLibSharp" version="2.3.0.0" publicKeyToken="DB62EBA44689B5B0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>sYM6Qasekz97AG5dsVMAtyI7/MwsO2aJ1JqRcd0n3h0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
