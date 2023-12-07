@@ -1,2 +1,2 @@
-1.2.6.2 Events and Graphs Update
-#3C9694
+1.2.7.0 Ranks and Music Update
+#AF8045
