@@ -51,6 +51,12 @@
         <member name="M:Nito.Disposables.CollectionDisposable.Dispose(System.Collections.Immutable.ImmutableQueue{System.IDisposable})">
             <inheritdoc />
         </member>
+        <member name="M:Nito.Disposables.CollectionDisposable.TryAdd(System.IDisposable)">
+            <summary>
+            Adds a disposable to the collection of disposables. If this instance is already disposed or disposing, then <paramref name="disposable"/> is not added and this method returns <c>false</c>.
+            </summary>
+            <param name="disposable">The disposable to add to our collection. May be <c>null</c>.</param>
+        </member>
         <member name="M:Nito.Disposables.CollectionDisposable.Add(System.IDisposable)">
             <summary>
             Adds a disposable to the collection of disposables. If this instance is already disposed or disposing, then <paramref name="disposable"/> is disposed immediately.
@@ -88,6 +94,12 @@
         </member>
         <member name="M:Nito.Disposables.Disposable.Dispose(System.Action)">
             <inheritdoc />
+        </member>
+        <member name="M:Nito.Disposables.Disposable.TryAdd(System.Action)">
+            <summary>
+            Adds a delegate to be executed when this instance is disposed. If this instance is already disposed or disposing, then <paramref name="dispose"/> is not added and this method returns <c>false</c>.
+            </summary>
+            <param name="dispose">The delegate to add. May be <c>null</c> to indicate no additional action.</param>
         </member>
         <member name="M:Nito.Disposables.Disposable.Add(System.Action)">
             <summary>

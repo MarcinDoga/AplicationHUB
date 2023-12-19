@@ -3939,7 +3939,7 @@
             Gets the current path in the case of expressions within collections
             </summary>
         </member>
-        <member name="M:Raven.Client.Documents.Linq.RavenQueryProviderProcessor`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.Action{Raven.Client.Documents.Session.IDocumentQueryCustomization},System.Action{Raven.Client.Documents.Queries.QueryResult},Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.String,System.String,System.Collections.Generic.HashSet{Raven.Client.Documents.Linq.FieldToFetch},System.Boolean,System.Type,Raven.Client.Documents.Conventions.DocumentConventions,System.Boolean)">
+        <member name="M:Raven.Client.Documents.Linq.RavenQueryProviderProcessor`1.#ctor(Raven.Client.Documents.Linq.IDocumentQueryGenerator,System.Action{Raven.Client.Documents.Session.IDocumentQueryCustomization},System.Action{Raven.Client.Documents.Queries.QueryResult},Raven.Client.Documents.Queries.Highlighting.LinqQueryHighlightings,System.String,System.String,System.Collections.Generic.HashSet{Raven.Client.Documents.Linq.FieldToFetch},System.Boolean,System.Type,Raven.Client.Documents.Conventions.DocumentConventions,System.Boolean,Raven.Client.Documents.Session.QueryStatistics)">
             <summary>
             Initializes a new instance of the <see cref="T:Raven.Client.Documents.Linq.RavenQueryProviderProcessor`1"/> class.
             </summary>
@@ -7388,6 +7388,11 @@
             Returns all changes for each entity stored within session. Including name of the field/property that changed, its old and new value and change type.
             </summary>
         </member>
+        <member name="M:Raven.Client.Documents.Session.IAdvancedDocumentSessionOperations.WhatChangedFor(System.Object)">
+            <summary>
+            Returns all changes for the specified entity. Including name of the field/property that changed, its old and new value and change type.
+            </summary>
+        </member>
         <member name="M:Raven.Client.Documents.Session.IAdvancedDocumentSessionOperations.GetTrackedEntities">
             <summary>
             Returns all the tracked entities in this session.
@@ -9629,6 +9634,11 @@
         <member name="M:Raven.Client.Documents.Session.InMemoryDocumentSessionOperations.Store(System.Object,System.String,System.String)">
             <summary>
             Stores the specified entity in the session, explicitly specifying its Id. The entity will be saved when SaveChanges is called.
+            </summary>
+        </member>
+        <member name="M:Raven.Client.Documents.Session.InMemoryDocumentSessionOperations.WhatChangedFor(System.Object)">
+            <summary>
+            Returns all changes for the specified entity. Including name of the field/property that changed, its old and new value and change type.
             </summary>
         </member>
         <member name="P:Raven.Client.Documents.Session.InMemoryDocumentSessionOperations.HasChanges">

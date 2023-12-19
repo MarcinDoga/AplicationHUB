@@ -14623,6 +14623,18 @@
             <param name="branch">The name of the branch</param>
             <param name="users">List of users with push access to remove</param>
         </member>
+        <member name="M:Octokit.IRepositoryBranchesClient.RenameBranch(System.String,System.String,System.String,System.String)">
+            <summary>
+            Renames a branch in a repository
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/branches/branches?apiVersion=2022-11-28#rename-a-branch">API documentation</a> for more details
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repository">The name of the repository</param>
+            <param name="branch">The name of the branch to rename</param>
+            <param name="newName">The new name of the branch</param>
+        </member>
         <member name="T:Octokit.IRepositoryCommentsClient">
             <summary>
             A client for GitHub's Repository Comments API.
@@ -24059,6 +24071,18 @@
             <param name="branch">The name of the branch</param>
             <param name="users">List of users with push access to remove</param>
         </member>
+        <member name="M:Octokit.RepositoryBranchesClient.RenameBranch(System.String,System.String,System.String,System.String)">
+            <summary>
+            Renames a branch in a repository
+            </summary>
+            <remarks>
+            See the <a href="https://docs.github.com/en/rest/branches/branches?apiVersion=2022-11-28#rename-a-branch">API documentation</a> for more details
+            </remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="repository">The name of the repository</param>
+            <param name="branch">The name of the branch to rename</param>
+            <param name="newName">The new name of the branch</param>
+        </member>
         <member name="T:Octokit.RepositoryCommentsClient">
             <summary>
             A client for GitHub's Repository Comments API.
@@ -32047,6 +32071,15 @@
             <param name="runId">The id of the workflow run</param>
             <returns></returns>
         </member>
+        <member name="M:Octokit.ApiUrls.RepositoryBranchRename(System.String,System.String,System.String)">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> to rename a repository branch.
+            </summary>
+            <param name="owner">The owner of the repository</param>
+            <param name="repository">The name of the repository</param>
+            <param name="branch">The name of the branch to rename</param>
+            <returns></returns>
+        </member>
         <member name="T:Octokit.AuthorizationExtensions">
             <summary>
             Represents operations to simplify triggering the authorization flow
@@ -32807,6 +32840,9 @@
             <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
             <remarks>The <see cref="P:Octokit.IResponse.Body"/> property will be <c>null</c> if the <paramref name="uri"/> points to a directory instead of a file</remarks>
         </member>
+        <member name="M:Octokit.Connection.GetRaw(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.TimeSpan)">
+            <inheritdoc/>
+        </member>
         <member name="M:Octokit.Connection.GetRawStream(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})">
             <inheritdoc/>
         </member>
@@ -33372,6 +33408,16 @@
             </summary>
             <param name="uri">URI endpoint to send request to</param>
             <param name="parameters">Querystring parameters for the request</param>
+            <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
+            <remarks>The <see cref="P:Octokit.IResponse.Body"/> property will be <c>null</c> if the <paramref name="uri"/> points to a directory instead of a file</remarks>
+        </member>
+        <member name="M:Octokit.IConnection.GetRaw(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.TimeSpan)">
+            <summary>
+            Performs an asynchronous HTTP GET request that expects a <seealso cref="T:Octokit.IResponse"/> containing raw data.
+            </summary>
+            <param name="uri">URI endpoint to send request to</param>
+            <param name="parameters">Querystring parameters for the request</param>
+            <param name="timeout">The Timeout value</param>
             <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
             <remarks>The <see cref="P:Octokit.IResponse.Body"/> property will be <c>null</c> if the <paramref name="uri"/> points to a directory instead of a file</remarks>
         </member>
