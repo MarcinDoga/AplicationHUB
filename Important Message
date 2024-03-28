@@ -1,4 +1,4 @@
-Visible = true
+Visible = false
 Uwaga! Od wersji 1.2.8.0 nastąpiła zmiana formatu ustawień z TXT na JSON, jeśli ustawienia są w starym formacie zostaną zresetowane!
 Remark! Since version 1.2.8.0 there has been a change in the format of the settings from TXT to JSON, if the settings are in the old format they will be reset!
 #cc0000
